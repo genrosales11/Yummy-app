@@ -34,45 +34,84 @@ header li img {
     margin-top: -40px;
 }
 /* zip code and drop down container */
-#top{
-    margin-top: 10px;
+
+.container {
+    height: 300px;
+    width: 100%;
     box-shadow: 0 0 3px #eddcff;
-   max-width: 100%;
-}
-
-#locationSearchArea {
-    text-align: center;
-    margin-top: 2%; 
+    margin-top: 30px;
 }
 
 
-#categoriesArea{
+
+#zipcode {
     text-align: center;
-    float: right;
-    margin-top: 60px;
-   
+    align-items: center;
+    
+}
+
+.u-full-width {
+    background-color: rgb(228, 209, 209);
+    align-items: center;
+    margin-top: 40px;
+}
+.column {
+    height: 240px;
+    box-shadow: 0 0 3px #eddcff;
+    margin-top: 20px;
+}
+
+/*dropdown */ 
+#dropdown {
+    padding-right: 20px;
+    text-align: center;
+    align-items: center;
 }
 
 .button-primary{
-    width: 100%;
+    width: 50%;
     margin-top: 5px;
-    background-color: #251733;
+    background-color: #eddcff;
 }
-/* map container */
 
-#mapArea{
-    margin-top: 10px;
-    background-color: #FABBBB;
+
+/* MAP API */
+#map {
     height: 300px;
-    width: 100%;
 }
 
-/* columns */
 
-.columns {
-    margin-top: 25px;
-    box-shadow: 0 0 3px #eddcff;
-    border: 20px;
-    padding-right: 10px;
-    padding-left: 10px;
+/* restauranr choices colums */
+
+#choices {
+    margin-top: 40px;
+    padding-left: 40px;
+    padding-right: 40px;
+}
+
+#choices2 {
+    margin-top: 40px;
+    padding-left: 40px;
+    padding-right: 40px;
+}
+
+/* about section */
+ #about {
+     width: 50%;
+     background-color: #2c1f3a;
+ }
+
+
+
+
+/* footer */
+
+.footer img {
+    width: 80px;
+    margin-bottom: -50px;
+
+}
+
+.footer {
+    background-color: #d9bff5;
 }

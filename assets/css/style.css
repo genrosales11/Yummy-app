@@ -41,6 +41,20 @@ header li img {
     box-shadow: 0 0 3px #eddcff;
     margin-top: 30px;
 }
+
+
+
+#zipcode {
+    text-align: center;
+    align-items: center;
+    
+}
+
+.u-full-width {
+    background-color: rgb(228, 209, 209);
+    align-items: center;
+    margin-top: 40px;
+}
 .column {
     height: 240px;
     box-shadow: 0 0 3px #eddcff;
@@ -50,13 +64,22 @@ header li img {
 /*dropdown */ 
 #dropdown {
     padding-right: 20px;
+    text-align: center;
+    align-items: center;
 }
+
+.button-primary{
+    width: 50%;
+    margin-top: 5px;
+    background-color: #eddcff;
+}
+
 
 /* MAP API */
-
 #map {
-    height: 400px;
+    height: 300px;
 }
+
 
 /* restauranr choices colums */
 
@@ -70,4 +93,10 @@ header li img {
     margin-top: 40px;
     padding-left: 40px;
     padding-right: 40px;
+}
+
+.footer img {
+    width: 80px;
+    margin-bottom: -50px;
+
 }

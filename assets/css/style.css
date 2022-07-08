@@ -1,37 +1,78 @@
+body {
+    background-color: #8d74a8;
+    font-family: 'Roboto Mono', monospace;
+}
+/* header */
 header{
+    background-color: #d9bff5;
     height: 100px;
-    background-color: #CFA6DE;
-}
-
-.container{
-    width: 100%;
-}
-
-#top{
-    width: 100%;
-    margin-top: 20px;
-}
-
-
-#locationSearchArea{
     text-align: center;
-    height: 100%;
-    margin-top: 2%;
+    padding: 15px;
+    box-shadow: 0 0 3px #eddcff;
+    font-family: 'Roboto Mono', monospace;
 }
+
+header li {
+    display: inline;
+    padding-left: 40px;
+    
+
+}
+header li a {
+    color: #2c1f3a;
+    padding: 13px;
+    background-color: #c9a4f0;
+    border-radius: 20px;
+    
+}
+header li a:hover {
+    color: blanchedalmond;
+}
+header li img {
+    width: 280px;
+    float: left;
+    margin-top: -40px;
+}
+/* zip code and drop down container */
+#top{
+    margin-top: 10px;
+    box-shadow: 0 0 3px #eddcff;
+   max-width: 100%;
+}
+
+#locationSearchArea {
+    text-align: center;
+    margin-top: 2%; 
+}
+
 
 #categoriesArea{
     text-align: center;
-    margin-top: 2%;
+    float: right;
+    margin-top: 60px;
+   
 }
 
 .button-primary{
     width: 100%;
     margin-top: 5px;
-    background-color: #D9BBFA;
+    background-color: #251733;
 }
+/* map container */
 
 #mapArea{
+    margin-top: 10px;
     background-color: #FABBBB;
     height: 300px;
     width: 100%;
+}
+
+/* columns */
+
+.columns {
+    margin-top: 25px;
+    box-shadow: 0 0 3px #eddcff;
+    border: 20px;
+    padding-right: 10px;
+    padding-left: 10px;
 }

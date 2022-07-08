@@ -34,25 +34,26 @@ header li img {
     margin-top: -40px;
 }
 
-.container{
-    width: 100%;
-}
-
 #top{
-    width: 100%;
-    margin-top: 20px;
+    margin-top: 10px;
+    box-shadow: 0 0 3px #eddcff;
+   max-width: 100%;
 }
 
 
-#locationSearchArea{
+
+
+#locationSearchArea {
     text-align: center;
-    height: 100%;
-    margin-top: 2%;
+    margin-top: 2%; 
 }
+
 
 #categoriesArea{
     text-align: center;
-    margin-top: 2%;
+    float: right;
+    margin-top: 60px;
+   
 }
 
 .button-primary{
@@ -62,6 +63,7 @@ header li img {
 }
 
 #mapArea{
+    margin-top: 10px;
     background-color: #FABBBB;
     height: 300px;
     width: 100%;

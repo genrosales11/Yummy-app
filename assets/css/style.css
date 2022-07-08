@@ -1,0 +1,68 @@
+body {
+    background-color: #8d74a8;
+    font-family: 'Roboto Mono', monospace;
+}
+
+header{
+    background-color: #d9bff5;
+    height: 100px;
+    text-align: center;
+    padding: 15px;
+    box-shadow: 0 0 3px #eddcff;
+    font-family: 'Roboto Mono', monospace;
+}
+
+header li {
+    display: inline;
+    padding-left: 40px;
+    
+
+}
+header li a {
+    color: #2c1f3a;
+    padding: 13px;
+    background-color: #c9a4f0;
+    border-radius: 20px;
+    
+}
+header li a:hover {
+    color: blanchedalmond;
+}
+header li img {
+    width: 280px;
+    float: left;
+    margin-top: -40px;
+}
+
+.container{
+    width: 100%;
+}
+
+#top{
+    width: 100%;
+    margin-top: 20px;
+}
+
+
+#locationSearchArea{
+    text-align: center;
+    height: 100%;
+    margin-top: 2%;
+}
+
+#categoriesArea{
+    text-align: center;
+    margin-top: 2%;
+}
+
+.button-primary{
+    width: 100%;
+    margin-top: 5px;
+    background-color: #251733;
+}
+
+#mapArea{
+    background-color: #FABBBB;
+    height: 300px;
+    width: 100%;
+}

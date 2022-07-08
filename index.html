@@ -4,9 +4,80 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>project one</title>
+    <link rel="stylesheet" href="assets/css/skeleton.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&family=Rubik+Moonrocks&display=swap');
+        </style>
+    <title>Yummy App</title>
 </head>
 <body>
     
+    <header>
+        <ul>
+            <li><img src="/yummy.png" alt="web logo"></li>
+         
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+        </ul>
+      
+    </header>
+    
+
+    <main>
+        <div class="container" id="top">
+            <div class="row">
+                <div class="six columns" id="locationSearchArea">
+                    <form id="locSearchForm">
+                        <label for="city">Enter</label>
+                        <input class="u-full-width" type="text" placeholder="City" id="citySearch">
+                        <label for="zip">Or</label>
+                        <input class="u-full-width" type="text" placeholder="Zipcode" id="zipCodeSearch">
+                    </form>
+                </div>
+
+                <div class="six columns" id="categoriesArea">
+                    <label for="cat">Choose a Category</label>
+                    <select class="u-full-width" id="chooseCategory">
+                      <option value="Option 1">Questions</option>
+                      <option value="Option 2">Admiration</option>
+                      <option value="Option 3">Can I get your number?</option>
+                    </select>
+                    <br>
+                    <br>
+                    <input class="button-primary" type="submit" value="Submit">
+                </div>
+            </div>
+        </div>
+
+        <div class="container" id="mapArea">
+            <h2>Map</h2>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                <h2>Search Results</h2>
+            </div>
+
+
+        </div>
+
+
+
+
+
+
+
+
+
+
+    </main>
+
+
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    <script src="./assets/js/script.js"></script>
 </body>
 </html>

@@ -67,3 +67,12 @@ header li img {
     width: 100%;
 }
 
+/* columns */
+
+.columns {
+    margin-top: 25px;
+    box-shadow: 0 0 3px #eddcff;
+    border: 20px;
+    padding-right: 10px;
+    padding-left: 10px;
+}

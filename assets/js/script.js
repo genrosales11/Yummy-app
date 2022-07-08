@@ -91,7 +91,21 @@ function getData(userLocation){
             // location: userLocation
         }
     }).then(function (data) {
-        console.log(data);
+        console.log(data)
+
+            for(i=0; i < 5; i++){
+
+                var card = document.createElement("div")
+                card.classList.add("card-class")
+
+                var name = document.createElement("h2")
+                name.textContent = data.businesses[i].name
+
+
+                card.appendChild(name)
+                document.getElementById("card-container").appendChild(card)
+            }
+
     });
 
 }

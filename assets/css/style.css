@@ -2,7 +2,7 @@ body {
     background-color: #8d74a8;
     font-family: 'Roboto Mono', monospace;
 }
-
+/* header */
 header{
     background-color: #d9bff5;
     height: 100px;
@@ -33,15 +33,12 @@ header li img {
     float: left;
     margin-top: -40px;
 }
-
+/* zip code and drop down container */
 #top{
     margin-top: 10px;
     box-shadow: 0 0 3px #eddcff;
    max-width: 100%;
 }
-
-
-
 
 #locationSearchArea {
     text-align: center;
@@ -61,6 +58,7 @@ header li img {
     margin-top: 5px;
     background-color: #251733;
 }
+/* map container */
 
 #mapArea{
     margin-top: 10px;
@@ -68,3 +66,4 @@ header li img {
     height: 300px;
     width: 100%;
 }
+

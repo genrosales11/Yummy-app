@@ -1,37 +1,117 @@
+body {
+    background-color: #8d74a8;
+    font-family: 'Roboto Mono', monospace;
+}
+/* header */
 header{
+    background-color: #d9bff5;
     height: 100px;
-    background-color: #CFA6DE;
+    text-align: center;
+    padding: 15px;
+    box-shadow: 0 0 3px #eddcff;
+    font-family: 'Roboto Mono', monospace;
 }
 
-.container{
+header li {
+    display: inline;
+    padding-left: 40px;
+    
+
+}
+header li a {
+    color: #2c1f3a;
+    padding: 13px;
+    background-color: #c9a4f0;
+    border-radius: 20px;
+    
+}
+header li a:hover {
+    color: blanchedalmond;
+}
+header li img {
+    width: 280px;
+    float: left;
+    margin-top: -40px;
+}
+/* zip code and drop down container */
+
+.container {
+    height: 300px;
     width: 100%;
+    box-shadow: 0 0 3px #eddcff;
+    margin-top: 30px;
 }
 
-#top{
-    width: 100%;
+
+
+#zipcode {
+    text-align: center;
+    align-items: center;
+    
+}
+
+.u-full-width {
+    background-color: rgb(228, 209, 209);
+    align-items: center;
+    margin-top: 40px;
+}
+.column {
+    height: 240px;
+    box-shadow: 0 0 3px #eddcff;
     margin-top: 20px;
 }
 
-
-#locationSearchArea{
+/*dropdown */ 
+#dropdown {
+    padding-right: 20px;
     text-align: center;
-    height: 100%;
-    margin-top: 2%;
-}
-
-#categoriesArea{
-    text-align: center;
-    margin-top: 2%;
+    align-items: center;
 }
 
 .button-primary{
-    width: 100%;
+    width: 50%;
     margin-top: 5px;
-    background-color: #D9BBFA;
+    background-color: #eddcff;
 }
 
-#map{
-    background-color: #FABBBB;
+
+/* MAP API */
+#map {
     height: 300px;
-    width: 100%;
+}
+
+
+/* restauranr choices colums */
+
+#choices {
+    margin-top: 40px;
+    padding-left: 40px;
+    padding-right: 40px;
+}
+
+#choices2 {
+    margin-top: 40px;
+    padding-left: 40px;
+    padding-right: 40px;
+}
+
+/* about section */
+ #about {
+     width: 50%;
+     background-color: #2c1f3a;
+ }
+
+
+
+
+/* footer */
+
+.footer img {
+    width: 80px;
+    margin-bottom: -50px;
+
+}
+
+.footer {
+    background-color: #d9bff5;
 }

@@ -1,14 +1,14 @@
 body {
-    background-color: #8d74a8;
+    background-color: #855b7e;
     font-family: 'Roboto Mono', monospace;
 }
 /* header */
 header{
-    background-color: #d9bff5;
+    background-color: #7f629e;
     height: 100px;
     text-align: center;
     padding: 15px;
-    box-shadow: 0 0 3px #eddcff;
+    box-shadow: 0 0 3px #8847ad;
     font-family: 'Roboto Mono', monospace;
 }
 
@@ -36,9 +36,10 @@ header li img {
 /* zip code and drop down container */
 
 .container {
+    background-color: #d9bff5;
     height: 300px;
     width: 100%;
-    box-shadow: 0 0 3px #eddcff;
+    box-shadow: 0 0 3px #cebdd8;
     margin-top: 30px;
 }
 
@@ -47,31 +48,39 @@ header li img {
 #zipcode {
     text-align: center;
     align-items: center;
+  
     
+}
+#areacode {
+    align-items: center;
 }
 
 .u-full-width {
     background-color: rgb(228, 209, 209);
-    align-items: center;
+    
     margin-top: 40px;
+    
 }
 .column {
     height: 240px;
-    box-shadow: 0 0 3px #eddcff;
+    box-shadow: 0 0 3px #8847ad;
     margin-top: 20px;
 }
 
 /*dropdown */ 
 #dropdown {
-    padding-right: 20px;
+    
     text-align: center;
     align-items: center;
 }
 
+
+
+
 .button-primary{
     width: 50%;
     margin-top: 5px;
-    background-color: #eddcff;
+    box-shadow: 0 0 3px #8847ad;
 }
 
 
@@ -84,26 +93,31 @@ header li img {
 /* restauranr choices colums */
 
 #choices {
-    margin-top: 40px;
+    margin-top: 10px;
+    margin-bottom: 40px;
     padding-left: 40px;
     padding-right: 40px;
+    padding-bottom: 10px;
+    background-color: #d9bff5;
 }
 
 #choices2 {
-    margin-top: 40px;
+    margin-top: 10px;
     padding-left: 40px;
     padding-right: 40px;
+    padding-bottom: 10px;
+    background-color: #d9bff5;
 }
 
 /* about section */
  #about {
      width: 50%;
-     background-color: #2c1f3a;
+     background-color: #80679b;
+     border: 5px solid #9177ad;
+     text-align: center;
+     color: black;
+     
  }
-
-
-
-
 /* footer */
 
 .footer img {
@@ -113,5 +127,10 @@ header li img {
 }
 
 .footer {
-    background-color: #d9bff5;
+    background-color: #7f629e;
+    color: black;
+}
+
+.footer p:hover {
+    color: blanchedalmond;
 }

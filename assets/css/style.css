@@ -34,45 +34,25 @@ header li img {
     margin-top: -40px;
 }
 /* zip code and drop down container */
-#top{
-    margin-top: 10px;
-    box-shadow: 0 0 3px #eddcff;
-   max-width: 100%;
-}
 
-#locationSearchArea {
-    text-align: center;
-    margin-top: 2%; 
-}
-
-
-#categoriesArea{
-    text-align: center;
-    float: right;
-    margin-top: 60px;
-   
-}
-
-.button-primary{
-    width: 100%;
-    margin-top: 5px;
-    background-color: #251733;
-}
-/* map container */
-
-#mapArea{
-    margin-top: 10px;
-    background-color: #FABBBB;
+.container {
     height: 300px;
     width: 100%;
+    box-shadow: 0 0 3px #eddcff;
+    margin-top: 30px;
+}
+.column {
+    height: 240px;
+    box-shadow: 0 0 3px #eddcff;
+    margin-top: 20px;
 }
 
-/* columns */
+#choices {
+    margin-top: 40px;
+    padding-left: 40px;
+    padding-right: 40px;
+}
 
-.columns {
-    margin-top: 25px;
-    box-shadow: 0 0 3px #eddcff;
-    border: 20px;
-    padding-right: 10px;
-    padding-left: 10px;
+#choices2 {
+    margin-top: 40px;
 }

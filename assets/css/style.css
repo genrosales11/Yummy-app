@@ -48,12 +48,16 @@ header li img {
 #zipcode {
     text-align: center;
     align-items: center;
+  
     
+}
+#areacode {
+    align-items: center;
 }
 
 .u-full-width {
     background-color: rgb(228, 209, 209);
-    align-items: center;
+    
     margin-top: 40px;
     
 }
@@ -65,9 +69,14 @@ header li img {
 
 /*dropdown */ 
 #dropdown {
-    padding-right: 20px;
+    
     text-align: center;
     align-items: center;
+}
+
+
+#chooseCategory {
+    box-sizing: 20px;
 }
 
 .button-primary{
@@ -86,17 +95,19 @@ header li img {
 /* restauranr choices colums */
 
 #choices {
-    margin-top: 40px;
+    margin-top: 10px;
     margin-bottom: 40px;
-    
+    padding-left: 40px;
     padding-right: 40px;
+    padding-bottom: 10px;
     background-color: #d9bff5;
 }
 
 #choices2 {
-    margin-top: 40px;
+    margin-top: 10px;
     padding-left: 40px;
     padding-right: 40px;
+    padding-bottom: 10px;
     background-color: #d9bff5;
 }
 
@@ -109,10 +120,6 @@ header li img {
      color: black;
      
  }
-
-
-
-
 /* footer */
 
 .footer img {
@@ -123,4 +130,9 @@ header li img {
 
 .footer {
     background-color: #7f629e;
+    color: black;
+}
+
+.footer p:hover {
+    color: blanchedalmond;
 }

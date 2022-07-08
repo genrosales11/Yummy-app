@@ -21,9 +21,23 @@ function setMarkers(map) {
             position: new google.maps.LatLng(res.lat, res.lng),
             title: res.name
         })
-
+        
         // To add marker to the map
         marker.setMap(map);
+
+        // Add an info window for each marker
+        var infoWindow = new google.maps.InfoWindow({
+            content: res.name
+        })
+        
+        // Clicking at the marker displays the marker's associated restaurant name
+        marker.addListener("click", () => {
+            infoWindow.open({
+                anchor: marker,
+                map,
+                shouldFocus: false
+            })
+        })
     })
 }
 

@@ -57,14 +57,19 @@
 
 // window.initMap = initMap;
 
-
+// Pointer to the search button
 var searchBtn = document.getElementById("search-btn")
+// Pointer to the users selection of food category
 var catSearch = document.getElementById("choose-category")
+// Pointer to the price ranges
+var pricePoint = document.querySelector('input[name="foobar"]')
 
 
-
-// var userLocation = "San Francisco"
+// Function to grab user input and pass it to the Yelp API
 function cityInput(event) {
+    // Empty container
+    $("#card-container").empty();
+
     event.preventDefault();
 
     var userLocation = document.getElementById("city-search").value;
@@ -75,13 +80,12 @@ function cityInput(event) {
 
     for (var i = 0, length = price.length; i < length; i++) {
         if (price[i].checked) {
-            price = price[i].value
+            price = price[i].value;
             break;
         }
     }
 
-    getData(userLocation, category, price)
-    addCat()
+    getData(userLocation, category, price);
 }
 
 // call yelp api
@@ -105,57 +109,83 @@ function getData(userLocation, category, price) {
     }).then(function (data) {
         console.log(data)
 
-        for (i = 0; i < 5; i++) {
+        for (var i = 0; i < 5; i++) {
+            // Create a card container for each restaurant information
+            var column = $("<div>");
+            column.attr("class", "column");
+            var card = $("<div>");
+            card.attr("class", "card");
 
-            var card = document.createElement("div")
-            card.classList.add("card-class")
+            // Restaurant image
+            var cardImage = $("<div>");
+            cardImage.attr("class", "card-image");
+            var imageFigure = $("<figure>");
+            imageFigure.attr("class", "image is-4by3");
+            var image = $("<img>");
+            image.attr("src", data.businesses[i].image_url);
+            image.attr("alt", "Restaurant image");
+            image.css("height", "100%");
+            image.css("min-width", "100%");
+            imageFigure.append(image);
+            cardImage.append(imageFigure);
+            card.append(cardImage);
 
-            var name = document.createElement("h2")
-            name.textContent = data.businesses[i].name
+            // Card content
+            var cardContent = $("<div>").attr("class", "card-content");
+            var content = $("<div>").attr("class", "content");
+            // Restaurant name
+            var name = $("<h2>");
+            name.text(data.businesses[i].name);
+            content.append(name);
 
-            var address = document.createElement("p")
-            address.textContent = data.businesses[i].location.display_address
+            // Row with columns for dollar sign, ratings, review count
+            var restaurantInfo = $("<div>").attr("class", "columns");
+            // Price range for each restaurant
+            var price = $("<p>").attr("class", "column");
+            price.text(data.businesses[i].price);
+            // Ratings for each restaurant
+            var ratings = $("<p>").attr("class", "column");
+            ratings.text(data.businesses[i].rating);
+            // Review count for each restaurant
+            var reviewCnt = $("<p>").attr("class", "column");
+            reviewCnt.text(data.businesses[i].review_count);
+            
+            restaurantInfo.append(price);
+            restaurantInfo.append(ratings);
+            restaurantInfo.append(reviewCnt);
 
-            var image = document.createElement("img")
-            image.src = data.businesses[i].image_url
+            
+            // Food category type for each restaurant
+            var category = $("<p>");
+            category.text(data.businesses[i].categories[0].title);
+            
+            // Address for each restaurant
+            var address = $("<p>");
+            address.text(data.businesses[i].location.display_address);
+            
+            // Yelp URL for each restaurant
+            var siteLink = $("<a>");
+            siteLink.attr("href", data.businesses[i].url);
+            siteLink.text("Click here to visit the restaurant on Yelp");
 
-            var price = document.createElement("p")
-            price.textContent = data.businesses[i].price
+            // Keep appending to this
+            content.append(restaurantInfo);
+            content.append(category);
+            content.append(address);
+            content.append(siteLink);
 
-            var ratings = document.createElement("p")
-            ratings.textContent = data.businesses[i].rating
+            // Append everything to the card
+            cardContent.append(content);
+            card.append(cardContent);
+            column.append(card);
 
-            var reviewCnt = document.createElement("p")
-            reviewCnt.textContent = data.businesses[i].review_count
-
-            var siteLink = document.createElement("a")
-            siteLink.setAttribute("href", data.businesses[i].url)
-            siteLink.textContent = "Click here to visit the restaurant on Yelp"
-
-            var category = document.createElement("p")
-            category.textContent = data.businesses[i].categories[0].title
-
-
-            card.appendChild(name)
-            card.appendChild(address)
-            card.appendChild(image)
-            card.appendChild(price)
-            card.appendChild(ratings)
-            card.appendChild(reviewCnt)
-            card.appendChild(siteLink)
-            card.appendChild(category)
-            document.getElementById("card-container").appendChild(card)
+            // Append card to HTML
+            $("#card-container").append(column);
         }
 
     });
 
 }
 
-function addCat() {
-    console.log(catSearch.value)
-}
-
-
-
-
+// Call Yelp API once the user clicks the "Search" button
 searchBtn.addEventListener("click", cityInput)

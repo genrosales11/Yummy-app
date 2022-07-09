@@ -66,6 +66,9 @@ var pricePoint = document.querySelector('input[name="foobar"]')
 
 // Function to grab user input and pass it to the Yelp API
 function cityInput(event) {
+    // Empty container
+    $("#card-container").empty();
+
     event.preventDefault();
 
     var userLocation = document.getElementById("city-search").value;
@@ -124,6 +127,8 @@ function getData(userLocation, category, price) {
             var image = $("<img>");
             image.attr("src", data.businesses[i].image_url);
             image.attr("alt", "Restaurant image");
+            image.css("height", "100%");
+            image.css("min-width", "100%");
             imageFigure.append(image);
             cardImage.append(imageFigure);
             card.append(cardImage);

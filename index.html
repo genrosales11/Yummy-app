@@ -12,13 +12,15 @@
     <title>Yummy App</title>
 </head>
 <body>
-    <!-- header goes here -->
-    <header>
-        <ul>
-            <li><img src="./assets/images/yummy.png" alt="web logo"></li>
+    <!-- Header of the page -->
+    <header class="hero">
+        <div class="hero-body">
+          <img class="title" src="./assets/images/yummy.png" alt="web logo"></img>
+          <ul class="subtitle">
             <li><a href="#">Home</a></li>
             <li><a href="#">About</a></li>
-        </ul>
+          </ul>
+        </div>
     </header>
 
     <!-- Main section for the content -->
@@ -34,24 +36,21 @@
 
         <!-- Section for user input -->
         <section id="user-input-section">
-            <div id="city-or-zipcode">
-            </div>
-            <div id="food-category">
-            </div>
-            <div id="price-point">
-            </div>
-            <div id="search-btn">
-            </div>
-
+            <!-- Input for the city/zipcode -->
+            <div id="city-or-zipcode"></div>
+            <!-- Dropdown for the food category -->
+            <div id="food-category"></div>
+            <!-- Radio buttons to select price point ($, $$, $$$) -->
+            <div id="price-point"></div>
+            <!-- Search button -->
+            <div id="search-btn"></div>
         </section>
 
         <!-- Section for the map -->
         <section id="map"></section>
 
         <!-- Section to display search results -->
-        <section class="display-results">
-
-        </section>
+        <section class="display-results"></section>
     </main>
 
     <!-- <div class="container" id="zipcode">

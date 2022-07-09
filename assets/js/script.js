@@ -68,17 +68,20 @@ var catSearch = document.getElementById("choose-category")
 // var userLocation = "San Francisco"
 function cityInput(event) {
     event.preventDefault();
-    
-    var userLocation = document.getElementById("city-search").value;
 
-    getData(userLocation)
+    var userLocation = document.getElementById("city-search").value;
+    var category = catSearch.value;
+
+    getData(userLocation, category)
     addCat()
 }
 
 // call yelp api
-function getData(userLocation) {
-    let queryURL = `https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?location=${userLocation}`;
+function getData(userLocation, category) {
+    let queryURL = `https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?location=${userLocation}&term=${category}`;
     const apiKey = 'S9-0qQhgv6fiYrqXXE9X-TIZd1aepWF1BA6eT6_wQnQXtp8R1SVNuaXBGaZO15-IizPiprlRb6IT7v_gz_Dfl7yzGpZD_sCSnedvAD89GvwKGf85mwqLPWc5JGjIYnYx'
+
+    
 
     $.ajax({
         url: queryURL,
@@ -90,7 +93,7 @@ function getData(userLocation) {
             "Authorization": `Bearer ${apiKey}`
         },
         data: {
-            // term: term
+            // term: searchTerm
             // location: userLocation
         }
     }).then(function (data) {
@@ -122,6 +125,21 @@ function getData(userLocation) {
             var siteLink = document.createElement("p")
             siteLink.textContent = data.businesses[i].url
 
+            var category = document.createElement("p")
+            category.textContent = data.businesses[i].categories[0].title
+
+
+            
+
+        //     function filter(){
+        //     if (category.textContent === catSearch.value) {
+        //         searchTerm = catSearch.value
+        //     } else {
+        //         searchTerm = " "
+        //     }
+        // }
+
+
 
             card.appendChild(name)
             card.appendChild(address)
@@ -130,6 +148,7 @@ function getData(userLocation) {
             card.appendChild(ratings)
             card.appendChild(reviewCnt)
             card.appendChild(siteLink)
+            card.appendChild(category)
             document.getElementById("card-container").appendChild(card)
 
 
@@ -139,9 +158,11 @@ function getData(userLocation) {
 
 }
 
-function addCat(){
+function addCat() {
     console.log(catSearch.value)
 }
+
+
 
 
 searchBtn.addEventListener("click", cityInput)

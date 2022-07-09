@@ -45,9 +45,6 @@ header li img {
     box-shadow: 0 0 3px #cebdd8;
     margin-top: 30px;
 }
-
-
-
 #zipcode {
     text-align: center;
     align-items: center;
@@ -58,10 +55,8 @@ header li img {
 #areacode {
     align-items: center;
 }
-
 .u-full-width {
     background-color: rgb(228, 209, 209);
-
     margin-top: 40px;
     
 } */
@@ -88,7 +83,7 @@ header li img {
 } */
 
 
-/* MAP API */
+/* MAP API 
 #map {
     height: 300px;
 }
@@ -96,6 +91,7 @@ header li img {
 
 /* restauranr choices colums
 
+/* restauranr choices colums
 #choices {
     margin-top: 10px;
     margin-bottom: 40px;
@@ -104,7 +100,6 @@ header li img {
     padding-bottom: 10px;
     background-color: #d9bff5;
 }
-
 #choices2 {
     margin-top: 10px;
     padding-left: 40px;
@@ -112,7 +107,6 @@ header li img {
     padding-bottom: 10px;
     background-color: #d9bff5;
 }
-
 /* about section */
  /* #about {
      width: 50%;
@@ -127,31 +121,25 @@ header li img {
 /* .footer img {
     width: 80px;
     margin-bottom: -50px;
-
 }
-
 .footer {
     background-color: #7f629e;
 }
-
 #card-container {
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
     justify-content: center;
 }
-
 .card-class {
     background-color: white;
     text-align: center;
 }
-
 img {
     width: 200px;
     height: auto;
     color: black;
 }
-
 .footer p:hover {
     color: blanchedalmond;
 } */

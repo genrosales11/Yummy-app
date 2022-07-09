@@ -58,9 +58,6 @@
 // window.initMap = initMap;
 
 
-
-
-
 var searchBtn = document.getElementById("search-btn")
 var catSearch = document.getElementById("choose-category")
 
@@ -81,8 +78,6 @@ function getData(userLocation, category) {
     let queryURL = `https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?location=${userLocation}&term=${category}`;
     const apiKey = 'S9-0qQhgv6fiYrqXXE9X-TIZd1aepWF1BA6eT6_wQnQXtp8R1SVNuaXBGaZO15-IizPiprlRb6IT7v_gz_Dfl7yzGpZD_sCSnedvAD89GvwKGf85mwqLPWc5JGjIYnYx'
 
-
-
     $.ajax({
         url: queryURL,
         method: "GET",
@@ -93,7 +88,7 @@ function getData(userLocation, category) {
             "Authorization": `Bearer ${apiKey}`
         },
         data: {
-            // term: searchTerm
+            // term: category,
             // location: userLocation
         }
     }).then(function (data) {
@@ -122,8 +117,9 @@ function getData(userLocation, category) {
             var reviewCnt = document.createElement("p")
             reviewCnt.textContent = data.businesses[i].review_count
 
-            var siteLink = document.createElement("p")
-            siteLink.textContent = data.businesses[i].url
+            var siteLink = document.createElement("a")
+            siteLink.setAttribute("href", data.businesses[i].url)
+            siteLink.textContent= "Click here to visit the restaurant on Yelp"
 
             var category = document.createElement("p")
             category.textContent = data.businesses[i].categories[0].title
@@ -159,3 +155,9 @@ searchBtn.addEventListener("click", cityInput)
 //   event.stopPropagation();
 //   dropdown.classList.toggle('is-active');
 // });
+
+var dropdown = document.querySelector('.dropdown');
+dropdown.addEventListener('click', function(event) {
+  event.stopPropagation();
+  dropdown.classList.toggle('is-active');
+});

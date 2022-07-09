@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,46 +9,58 @@
     <link rel="stylesheet" href="assets/css/style.css">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&family=Rubik+Moonrocks&display=swap');
-        </style>
+    </style>
     <title>Yummy App</title>
 </head>
+
 <body>
     <!-- header goes here -->
     <header>
         <ul>
-            <li><img src="/yummy.png" alt="web logo"></li>
-         
+            <li><img src="" alt="web logo" id="logo"></li>
+
             <li><a href="#">Home</a></li>
             <li><a href="#">About</a></li>
         </ul>
-      
+
     </header>
-<div class="container" id="zipcode">
-    <div class="columns is-desktop" id="areacode">
-        <div class="column">    
-            <form id="locSearchForm">
-                <label for="city">Enter</label>
-                <input class="u-full-width" type="text" placeholder="City" id="city-search">
-                <label for="zip">Or</label>
-                <input class="u-full-width" type="text" placeholder="Zipcode" id="zip-code-search">
-            </form>
+    <div class="container" id="zipcode">
+        <div class="columns is-desktop" id="areacode">
+            <div class="column">
+                <!-- <form id="locSearchForm">
+                    <label for="city">Search location</label>
+                    <input class="u-full-width" type="text" placeholder="city or zip" id="city-search">
+                </form> -->
+
+                <form class="box" id="locSearchForm">
+                    <div class="field">
+                      <label class="label">location</label>
+                      <div class="control">
+                        <input class="input" type="text" placeholder="city or zip" id="city-search">
+                      </div>
+                    </div>
+                    <button class="button is-primary">Sign in</button>
+                </form> 
+
+            </div>
+            <div class="column" id="dropdown">
+                <label for="cat">Pasta, Tacos, Dine-in</label>
+                <select class="u-full-width" id="choose-category">
+                    <!-- <option value="Option 1">restaurants</option> -->
+                    <option value=" "></option>
+                    <option value="Italian">Italian</option>
+                    <option value="Peruvian">Peruvian</option>
+                    <option value="American">American</option>
+                    <option value="Japanese">Japanese</option>
+                    <option value="Mexican">Mexican</option>
+                </select>
+                <br>
+                <br>
+                <input class="button-primary" type="submit" value="Submit" id="search-btn">
+            </div>
+        
+
         </div>
-        <div class="column" id="dropdown">
-            <label for="cat">Pasta, Tacos, Dine-in</label>
-            <select class="u-full-width" id="chooseCategory">
-              <option value="Option 1">restaurants</option>
-              <option value="Option 2">Mexican</option>
-              <option value="Option 3">Italian</option>
-              <option value="Option 3">Peruvian</option>
-              <option value="Option 3">American</option>
-              <option value="Option 3">Japanese</option>
-            </select>
-            <br>
-            <br>
-            <input class="button-primary" type="submit" value="Submit" id="search-btn">
-        </div>
-       
-      </div>
     </div>
 
     <!-- map container -->
@@ -55,48 +68,38 @@
         <h2>Map</h2>
     </div>
 
-    
-         
 
-<!-- restaurant choices #1 columns-->
 
-<div class="columns" id="choices">
-    <div id="card-container">
+
+    <!-- restaurant choices #1 columns-->
+
+    <div class="columns" id="choices">
+        <div id="card-container">
+
+        </div>
 
     </div>
 
-
-    <!-- <div class="column is-one-quarter">choice #1 </div>
-    <div class="column">Auto</div>
-    <div class="column">Auto</div>
-    <div class="column">Auto</div> -->
-</div>
-  <!-- restaurant choices #2 columns-->
-  <div class="columns" id="choices2">
-    <!-- <div class="column is-one-quarter">choice # 2</div>
-    <div class="column">Auto</div>
-    <div class="column">Auto</div>
-    <div class="column">Auto</div> -->
-  </div>
-  
-<!-- ABOUT SECTION HERE-->
-<div class="container" id="about">
-<div class="about-section">
-    <h1>About Us Page</h1>
-    <p>Here at Yummy-App, it is our mission to connect people with great local businesses. To accomplish our mission, we aim to make Yummy-App available and accessible to as many people as possible.</p>
-  </div>
-</div>
-
-<!--FOOTER HERE-->
-  <footer class="footer">
-    <div class="content has-text-centered">
-      <p>
-        <strong>Yummy App<img src="/yummy.png" alt="web logo"></strong> by Laura Sierra, Marry Dillon and Genesis Rosales
-      </p>
+    <!-- ABOUT SECTION HERE-->
+    <div class="container" id="about">
+        <div class="about-section">
+            <h1>About Us Page</h1>
+            <p>Here at Yummy-App, it is our mission to connect people with great local businesses. To accomplish our
+                mission, we aim to make Yummy-App available and accessible to as many people as possible.</p>
+        </div>
     </div>
-  </footer>
 
-    
+    <!--FOOTER HERE-->
+    <footer class="footer">
+        <div class="content has-text-centered">
+            <p>
+                <strong>Yummy App<img src="assets/images/yummy.png" alt="web logo"></strong> by Laura Sierra, Marry
+                Dillon and Genesis Rosales
+            </p>
+        </div>
+    </footer>
+
+
 
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -106,4 +109,5 @@
     </script> -->
     <script src="./assets/js/script.js"></script>
 </body>
+
 </html>

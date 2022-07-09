@@ -2,8 +2,9 @@ body {
     background-color: #855b7e;
     font-family: 'Roboto Mono', monospace;
 }
+
 /* header */
-header{
+header {
     background-color: #7f629e;
     height: 100px;
     text-align: center;
@@ -15,24 +16,28 @@ header{
 header li {
     display: inline;
     padding-left: 40px;
-    
+
 
 }
+
 header li a {
     color: #2c1f3a;
     padding: 13px;
     background-color: #c9a4f0;
     border-radius: 20px;
-    
+
 }
+
 header li a:hover {
     color: blanchedalmond;
 }
+
 header li img {
     width: 280px;
     float: left;
     margin-top: -40px;
 }
+
 /* zip code and drop down container */
 
 .container {
@@ -48,28 +53,30 @@ header li img {
 #zipcode {
     text-align: center;
     align-items: center;
-  
-    
+
+
 }
+
 #areacode {
     align-items: center;
 }
 
 .u-full-width {
     background-color: rgb(228, 209, 209);
-    
+
     margin-top: 40px;
-    
+
 }
+
 .column {
     height: 240px;
     box-shadow: 0 0 3px #8847ad;
     margin-top: 20px;
 }
 
-/*dropdown */ 
+/*dropdown */
 #dropdown {
-    
+
     text-align: center;
     align-items: center;
 }
@@ -77,7 +84,7 @@ header li img {
 
 
 
-.button-primary{
+.button-primary {
     width: 50%;
     margin-top: 5px;
     box-shadow: 0 0 3px #8847ad;
@@ -110,14 +117,15 @@ header li img {
 }
 
 /* about section */
- #about {
-     width: 50%;
-     background-color: #80679b;
-     border: 5px solid #9177ad;
-     text-align: center;
-     color: black;
-     
- }
+#about {
+    width: 50%;
+    background-color: #80679b;
+    border: 5px solid #9177ad;
+    text-align: center;
+    color: black;
+
+}
+
 /* footer */
 
 .footer img {
@@ -130,19 +138,19 @@ header li img {
     background-color: #7f629e;
 }
 
-#card-container{
+#card-container {
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
-    justify-content: center; 
+    justify-content: center;
 }
 
-.card-class{
+.card-class {
     background-color: white;
     text-align: center;
 }
 
-img{
+img {
     width: 200px;
     height: auto;
     color: black;

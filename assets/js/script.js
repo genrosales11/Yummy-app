@@ -107,8 +107,8 @@ function getData(userLocation, category, price) {
 
         for (var i = 0; i < 5; i++) {
             // Create a card container for each restaurant information
-            var card = document.createElement("div");
-            card.setAttribute("class", "card column");
+            var card = $("<div>");
+            card.attr("class", "card column");
 
             // <div class="card-image">
             //     <figure class="image is-4by3">
@@ -117,13 +117,13 @@ function getData(userLocation, category, price) {
             // </div>
 
             // Restaurant image
-            var cardImage = document.createElement("div");
-            cardImage.setAttribute("class", "card-image");
-            var imageFigure = document.createElement("figure");
-            imageFigure.setAttribute("class", "image is-4by3");
-            var image = document.createElement("img");
-            image.src = data.businesses[i].image_url;
-            image.alt = "Restaurant image";
+            var cardImage = $("<div>");
+            cardImage.attr("class", "card-image");
+            var imageFigure = $("<figure>");
+            imageFigure.attr("class", "image is-4by3");
+            var image = $("<img>");
+            image.attr("src", data.businesses[i].image_url);
+            image.attr("alt", "Restaurant image");
             imageFigure.append(image);
             cardImage.append(imageFigure);
             card.append(cardImage);
@@ -138,24 +138,24 @@ function getData(userLocation, category, price) {
             //     </div>
             // </div>
 
-            var cardContent = document.createElement("div").setAttribute("class", "card-content");
-            var content = document.createElement("div").setAttribute("class", "content");
+            var cardContent = $("<div>").attr("class", "card-content");
+            var content = $("<div>").attr("class", "content");
             // Restaurant name
-            var name = document.createElement("h2");
-            name.textContent = data.businesses[i].name;
+            var name = $("<h2>");
+            name.text(data.businesses[i].name);
             content.append(name);
 
             // Row with columns for dollar sign, ratings, review count
-            var restaurantInfo = document.createElement("div").setAttribute("class", "columns");
+            var restaurantInfo = $("<div>").attr("class", "columns");
             // Price range for each restaurant
-            var price = document.createElement("p").setAttribute("class", "column");
+            var price = $("<p>").attr("class", "column");
             price.textContent = data.businesses[i].price;
             // Ratings for each restaurant
-            var ratings = document.createElement("p").setAttribute("class", "column");
-            ratings.textContent = data.businesses[i].rating;
+            var ratings = $("<p>").attr("class", "column");
+            ratings.text(data.businesses[i].rating);
             // Review count for each restaurant
-            var reviewCnt = document.createElement("p").setAttribute("class", "column");
-            reviewCnt.textContent = data.businesses[i].review_count;
+            var reviewCnt = $("<p>").attr("class", "column");
+            reviewCnt.text(data.businesses[i].review_count);
             
             restaurantInfo.append(price);
             restaurantInfo.append(ratings);
@@ -163,17 +163,17 @@ function getData(userLocation, category, price) {
 
             
             // Food category type for each restaurant
-            var category = document.createElement("p");
-            category.textContent = data.businesses[i].categories[0].title;
+            var category = $("<p>");
+            category.text(data.businesses[i].categories[0].title);
             
             // Address for each restaurant
-            var address = document.createElement("p");
-            address.textContent = data.businesses[i].location.display_address;
+            var address = $("<p>");
+            address.text(data.businesses[i].location.display_address);
             
             // Yelp URL for each restaurant
-            var siteLink = document.createElement("a")
-            siteLink.setAttribute("href", data.businesses[i].url)
-            siteLink.textContent = "Click here to visit the restaurant on Yelp"
+            var siteLink = $("<a>");
+            siteLink.attr("href", data.businesses[i].url);
+            siteLink.text("Click here to visit the restaurant on Yelp");
 
             // Keep appending to this
             content.append(restaurantInfo);
@@ -209,7 +209,7 @@ function getData(userLocation, category, price) {
             // category.textContent = data.businesses[i].categories[0].title
 
             // Append card to HTML
-            document.getElementById("card-container").append(card)
+            $("#card-container").append(card)
         }
 
     });

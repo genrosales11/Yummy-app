@@ -57,26 +57,27 @@
 
 // window.initMap = initMap;
 
-
+// Pointer to the search button
 var searchBtn = document.getElementById("search-btn")
+// Pointer to the users selection of food category
 var catSearch = document.getElementById("choose-category")
 
 
-// var userLocation = "San Francisco"
+// Function to grab user input and pass it to the Yelp API
 function cityInput(event) {
     event.preventDefault();
 
     var userLocation = document.getElementById("city-search").value;
     var category = catSearch.value;
 
-    getData(userLocation, category)
-    addCat()
+    // Yelp API
+    getData(userLocation, category);
 }
 
-// call yelp api
+// Call yelp api
 function getData(userLocation, category) {
     let queryURL = `https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?location=${userLocation}&term=${category}`;
-    const apiKey = 'S9-0qQhgv6fiYrqXXE9X-TIZd1aepWF1BA6eT6_wQnQXtp8R1SVNuaXBGaZO15-IizPiprlRb6IT7v_gz_Dfl7yzGpZD_sCSnedvAD89GvwKGf85mwqLPWc5JGjIYnYx'
+    const apiKey = 'S9-0qQhgv6fiYrqXXE9X-TIZd1aepWF1BA6eT6_wQnQXtp8R1SVNuaXBGaZO15-IizPiprlRb6IT7v_gz_Dfl7yzGpZD_sCSnedvAD89GvwKGf85mwqLPWc5JGjIYnYx';
 
     $.ajax({
         url: queryURL,
@@ -96,35 +97,36 @@ function getData(userLocation, category) {
 
         for (i = 0; i < 5; i++) {
 
+            // Create a card for each restaurant information
             var card = document.createElement("div")
             card.classList.add("card-class")
-
+            // Name for each restaurant
             var name = document.createElement("h2")
             name.textContent = data.businesses[i].name
-
+            // Address for each restaurant
             var address = document.createElement("p")
             address.textContent = data.businesses[i].location.display_address
-
+            // Image for each restaurant
             var image = document.createElement("img")
             image.src = data.businesses[i].image_url
-
+            // Price range for each restaurant
             var price = document.createElement("p")
             price.textContent = data.businesses[i].price
-
+            // Ratings for each restaurant
             var ratings = document.createElement("p")
             ratings.textContent = data.businesses[i].rating
-
+            // Review count for each restaurant
             var reviewCnt = document.createElement("p")
             reviewCnt.textContent = data.businesses[i].review_count
-
+            // Yelp URL for each restaurant
             var siteLink = document.createElement("a")
             siteLink.setAttribute("href", data.businesses[i].url)
             siteLink.textContent= "Click here to visit the restaurant on Yelp"
-
+            // Food category type for each restaurant
             var category = document.createElement("p")
             category.textContent = data.businesses[i].categories[0].title
 
-
+            // Append to the card container
             card.appendChild(name)
             card.appendChild(address)
             card.appendChild(image)
@@ -133,6 +135,7 @@ function getData(userLocation, category) {
             card.appendChild(reviewCnt)
             card.appendChild(siteLink)
             card.appendChild(category)
+            // Append card to HTML
             document.getElementById("card-container").appendChild(card)
         }
 
@@ -145,17 +148,11 @@ function addCat() {
 }
 
 
-
-
+// Call Yelp API once the user clicks the "Search" button
 searchBtn.addEventListener("click", cityInput)
 
-// bulma dropdown event listener
-// var dropdown = document.querySelector('.dropdown');
-// dropdown.addEventListener('click', function(event) {
-//   event.stopPropagation();
-//   dropdown.classList.toggle('is-active');
-// });
-
+ 
+// Bulma dropdown event listener
 var dropdown = document.querySelector('.dropdown');
 dropdown.addEventListener('click', function(event) {
   event.stopPropagation();

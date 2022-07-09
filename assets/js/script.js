@@ -76,10 +76,7 @@ function cityInput(event) {
 
     for (var i = 0, length = price.length; i < length; i++) {
         if (price[i].checked) {
-
-            alert(price[i].value);
             price = price[i].value
-   
             break;
         }
     }

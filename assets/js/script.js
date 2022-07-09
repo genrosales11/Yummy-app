@@ -106,7 +106,6 @@ function getData(userLocation, category, price) {
         console.log(data)
 
         for (i = 0; i < 5; i++) {
-
             // Create a card for each restaurant information
             var card = document.createElement("div")
             card.classList.add("card-class")
@@ -137,15 +136,16 @@ function getData(userLocation, category, price) {
             category.textContent = data.businesses[i].categories[0].title
 
             // Append to the card container
-            card.appendChild(name)
-            card.appendChild(address)
             card.appendChild(image)
+            card.appendChild(name)
             card.appendChild(price)
             card.appendChild(ratings)
             card.appendChild(reviewCnt)
-            card.appendChild(siteLink)
             card.appendChild(category)
+            card.appendChild(address)
+            card.appendChild(siteLink)
             // Append card to HTML
+            appendCard(card)
             document.getElementById("card-container").appendChild(card)
         }
 

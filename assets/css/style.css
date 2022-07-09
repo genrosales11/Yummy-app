@@ -1,10 +1,9 @@
-body {
+/* body {
     background-color: #855b7e;
     font-family: 'Roboto Mono', monospace;
-}
-
+} */
 /* header */
-header {
+/* header{
     background-color: #7f629e;
     height: 100px;
     text-align: center;
@@ -36,11 +35,10 @@ header li img {
     width: 280px;
     float: left;
     margin-top: -40px;
-}
-
+} */
 /* zip code and drop down container */
 
-.container {
+/* .container {
     background-color: #d9bff5;
     height: 300px;
     width: 100%;
@@ -65,18 +63,17 @@ header li img {
     background-color: rgb(228, 209, 209);
 
     margin-top: 40px;
-
-}
-
-.column {
+    
+} */
+/* .column {
     height: 240px;
     box-shadow: 0 0 3px #8847ad;
     margin-top: 20px;
-}
+} */
 
-/*dropdown */
-#dropdown {
-
+/*dropdown */ 
+/* #dropdown {
+    
     text-align: center;
     align-items: center;
 }
@@ -88,7 +85,7 @@ header li img {
     width: 50%;
     margin-top: 5px;
     box-shadow: 0 0 3px #8847ad;
-}
+} */
 
 
 /* MAP API */
@@ -97,7 +94,7 @@ header li img {
 }
 
 
-/* restauranr choices colums */
+/* restauranr choices colums
 
 #choices {
     margin-top: 10px;
@@ -117,18 +114,17 @@ header li img {
 }
 
 /* about section */
-#about {
-    width: 50%;
-    background-color: #80679b;
-    border: 5px solid #9177ad;
-    text-align: center;
-    color: black;
-
-}
-
+ /* #about {
+     width: 50%;
+     background-color: #80679b;
+     border: 5px solid #9177ad;
+     text-align: center;
+     color: black;
+     
+ } */
 /* footer */
 
-.footer img {
+/* .footer img {
     width: 80px;
     margin-bottom: -50px;
 
@@ -158,4 +154,4 @@ img {
 
 .footer p:hover {
     color: blanchedalmond;
-}
+} */

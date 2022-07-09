@@ -60,6 +60,8 @@
 
 var searchBtn = document.getElementById("search-btn")
 var catSearch = document.getElementById("choose-category")
+var pricePoint = document.querySelector('input[name="foobar"]')
+
 
 
 // var userLocation = "San Francisco"
@@ -68,14 +70,27 @@ function cityInput(event) {
 
     var userLocation = document.getElementById("city-search").value;
     var category = catSearch.value;
+    // var price = pricePoint.value
 
-    getData(userLocation, category)
+    var price = document.getElementsByName('foobar');
+
+    for (var i = 0, length = price.length; i < length; i++) {
+        if (price[i].checked) {
+
+            alert(price[i].value);
+            price = price[i].value
+   
+            break;
+        }
+    }
+
+    getData(userLocation, category, price)
     addCat()
 }
 
 // call yelp api
-function getData(userLocation, category) {
-    let queryURL = `https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?location=${userLocation}&term=${category}`;
+function getData(userLocation, category, price) {
+    let queryURL = `https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?location=${userLocation}&term=${category}&price=${price}`;
     const apiKey = 'S9-0qQhgv6fiYrqXXE9X-TIZd1aepWF1BA6eT6_wQnQXtp8R1SVNuaXBGaZO15-IizPiprlRb6IT7v_gz_Dfl7yzGpZD_sCSnedvAD89GvwKGf85mwqLPWc5JGjIYnYx'
 
     $.ajax({
@@ -119,7 +134,7 @@ function getData(userLocation, category) {
 
             var siteLink = document.createElement("a")
             siteLink.setAttribute("href", data.businesses[i].url)
-            siteLink.textContent= "Click here to visit the restaurant on Yelp"
+            siteLink.textContent = "Click here to visit the restaurant on Yelp"
 
             var category = document.createElement("p")
             category.textContent = data.businesses[i].categories[0].title
@@ -148,16 +163,3 @@ function addCat() {
 
 
 searchBtn.addEventListener("click", cityInput)
-
-// bulma dropdown event listener
-// var dropdown = document.querySelector('.dropdown');
-// dropdown.addEventListener('click', function(event) {
-//   event.stopPropagation();
-//   dropdown.classList.toggle('is-active');
-// });
-
-var dropdown = document.querySelector('.dropdown');
-dropdown.addEventListener('click', function(event) {
-  event.stopPropagation();
-  dropdown.classList.toggle('is-active');
-});

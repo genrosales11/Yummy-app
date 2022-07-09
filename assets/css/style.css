@@ -2,16 +2,9 @@
     background-color: #855b7e;
     font-family: 'Roboto Mono', monospace;
 } */
-<<<<<<< HEAD
-
-  /* header {
-   
- background-color: #7f629e;
-=======
 /* header */
 /* header{
     background-color: #7f629e;
->>>>>>> 53de35c93e84bcfe396251521171061dfd1b01cf
     height: 100px;
     text-align: center;
     padding: 15px;
@@ -19,10 +12,6 @@
     font-family: 'Roboto Mono', monospace;
 }
 
-<<<<<<< HEAD
-
-
-=======
 header li {
     display: inline;
     padding-left: 40px;
@@ -47,7 +36,6 @@ header li img {
     float: left;
     margin-top: -40px;
 } */
->>>>>>> 53de35c93e84bcfe396251521171061dfd1b01cf
 /* zip code and drop down container */
 
 /* .container {
@@ -60,11 +48,8 @@ header li img {
 #zipcode {
     text-align: center;
     align-items: center;
-<<<<<<< HEAD
-=======
 
 
->>>>>>> 53de35c93e84bcfe396251521171061dfd1b01cf
 }
 
 #areacode {
@@ -72,10 +57,6 @@ header li img {
 }
 .u-full-width {
     background-color: rgb(228, 209, 209);
-<<<<<<< HEAD
-=======
-
->>>>>>> 53de35c93e84bcfe396251521171061dfd1b01cf
     margin-top: 40px;
     
 } */
@@ -91,13 +72,10 @@ header li img {
     text-align: center;
     align-items: center;
 }
-<<<<<<< HEAD
-=======
 
 
 
 
->>>>>>> 53de35c93e84bcfe396251521171061dfd1b01cf
 .button-primary {
     width: 50%;
     margin-top: 5px;
@@ -111,10 +89,7 @@ header li img {
 }
 
 
-<<<<<<< HEAD
-=======
 /* restauranr choices colums
->>>>>>> 53de35c93e84bcfe396251521171061dfd1b01cf
 
 /* restauranr choices colums
 #choices {
@@ -150,28 +125,16 @@ header li img {
 .footer {
     background-color: #7f629e;
 }
-<<<<<<< HEAD
-=======
-
->>>>>>> 53de35c93e84bcfe396251521171061dfd1b01cf
 #card-container {
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
     justify-content: center;
 }
-<<<<<<< HEAD
-=======
-
->>>>>>> 53de35c93e84bcfe396251521171061dfd1b01cf
 .card-class {
     background-color: white;
     text-align: center;
 }
-<<<<<<< HEAD
-=======
-
->>>>>>> 53de35c93e84bcfe396251521171061dfd1b01cf
 img {
     width: 200px;
     height: auto;
@@ -179,9 +142,4 @@ img {
 }
 .footer p:hover {
     color: blanchedalmond;
-<<<<<<< HEAD
 } */
-
-=======
-} */
->>>>>>> 53de35c93e84bcfe396251521171061dfd1b01cf

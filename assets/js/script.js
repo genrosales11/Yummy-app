@@ -62,20 +62,26 @@
 
 
 var searchBtn = document.getElementById("search-btn")
+var catSearch = document.getElementById("choose-category")
 
 
 // var userLocation = "San Francisco"
-function cityInput(event){
+function cityInput(event) {
     event.preventDefault();
-    //grab the text from the input;
-    var userLocation= document.getElementById("city-search").value;
-    getData(userLocation)
+
+    var userLocation = document.getElementById("city-search").value;
+    var category = catSearch.value;
+
+    getData(userLocation, category)
+    addCat()
 }
 
 // call yelp api
-function getData(userLocation){
-    let queryURL = `https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?location=${userLocation}`;
+function getData(userLocation, category) {
+    let queryURL = `https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?location=${userLocation}&term=${category}`;
     const apiKey = 'S9-0qQhgv6fiYrqXXE9X-TIZd1aepWF1BA6eT6_wQnQXtp8R1SVNuaXBGaZO15-IizPiprlRb6IT7v_gz_Dfl7yzGpZD_sCSnedvAD89GvwKGf85mwqLPWc5JGjIYnYx'
+
+
 
     $.ajax({
         url: queryURL,
@@ -87,54 +93,61 @@ function getData(userLocation){
             "Authorization": `Bearer ${apiKey}`
         },
         data: {
-            // term: term
+            // term: searchTerm
             // location: userLocation
         }
     }).then(function (data) {
         console.log(data)
 
-            for(i=0; i < 5; i++){
+        for (i = 0; i < 5; i++) {
 
-                var card = document.createElement("div")
-                card.classList.add("card-class")
+            var card = document.createElement("div")
+            card.classList.add("card-class")
 
-                var name = document.createElement("h2")
-                name.textContent = data.businesses[i].name
+            var name = document.createElement("h2")
+            name.textContent = data.businesses[i].name
 
-                var address = document.createElement("p")
-                address.textContent = data.businesses[i].location.display_address
+            var address = document.createElement("p")
+            address.textContent = data.businesses[i].location.display_address
 
-                var image = document.createElement("img")
-                image.src = data.businesses[i].image_url
+            var image = document.createElement("img")
+            image.src = data.businesses[i].image_url
 
-                var price = document.createElement("p")
-                price.textContent = data.businesses[i].price
+            var price = document.createElement("p")
+            price.textContent = data.businesses[i].price
 
-                var ratings = document.createElement("p")
-                ratings.textContent = data.businesses[i].rating
+            var ratings = document.createElement("p")
+            ratings.textContent = data.businesses[i].rating
 
-                var reviewCnt = document.createElement("p")
-                reviewCnt.textContent = data.businesses[i].review_count
+            var reviewCnt = document.createElement("p")
+            reviewCnt.textContent = data.businesses[i].review_count
 
-                var siteLink = document.createElement("p")
-                siteLink.textContent = data.businesses[i].url
+            var siteLink = document.createElement("p")
+            siteLink.textContent = data.businesses[i].url
 
-            
-                card.appendChild(name)
-                card.appendChild(address)
-                card.appendChild(image)
-                card.appendChild(price)
-                card.appendChild(ratings)
-                card.appendChild(reviewCnt)
-                card.appendChild(siteLink)
-                document.getElementById("card-container").appendChild(card)
+            var category = document.createElement("p")
+            category.textContent = data.businesses[i].categories[0].title
 
 
-            }
+            card.appendChild(name)
+            card.appendChild(address)
+            card.appendChild(image)
+            card.appendChild(price)
+            card.appendChild(ratings)
+            card.appendChild(reviewCnt)
+            card.appendChild(siteLink)
+            card.appendChild(category)
+            document.getElementById("card-container").appendChild(card)
+        }
 
     });
 
 }
+
+function addCat() {
+    console.log(catSearch.value)
+}
+
 
 
 

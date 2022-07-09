@@ -124,18 +124,64 @@ function getData(userLocation, category, price) {
             var image = document.createElement("img");
             image.src = data.businesses[i].image_url;
             image.alt = "Restaurant image";
-            imageFigure.appendChild(image)
+            imageFigure.appendChild(image);
             cardImage.appendChild(imageFigure);
             card.append(cardImage);
 
+            // <div class="card-content">
+            //     <div class="media">
+            //         <div class="media-left">
+            //             <figure class="image is-48x48">
+            //                 <img src="https://bulma.io/images/placeholders/96x96.png" alt="Placeholder image">
+            //             </figure>
+            //         </div>
+            //         <div class="media-content">
+            //             <p class="title is-4">John Smith</p>
+            //             <p class="subtitle is-6">@johnsmith</p>
+            //         </div>
+            //     </div>
+
+            //     <div class="content">
+            //         Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            //         Phasellus nec iaculis mauris. <a>@bulmaio</a>.
+            //         <a href="#">#css</a> <a href="#">#responsive</a>
+            //         <br>
+            //             <time datetime="2016-1-1">11:09 PM - 1 Jan 2016</time>
+            //     </div>
+            // </div>
+
+            var cardContent = document.createElement("div").setAttribute("class", "card-content");
+            var content = document.createElement("div").setAttribute("class", "content");
+            // Restaurant name
+            content.appendChild(data.businesses[i].name);
+
+            // Row with columns for dollar sign, ratings, review count
+            var restaurantInfo = document.createElement("div").setAttribute("class", "columns");
+            // Price range for each restaurant
+            var price = document.createElement("p").setAttribute("class", "column");
+            price.textContent = data.businesses[i].price;
+            // Ratings for each restaurant
+            var ratings = document.createElement("p").setAttribute("class", "column");
+            ratings.textContent = data.businesses[i].rating;
+            // Review count for each restaurant
+            var reviewCnt = document.createElement("p").setAttribute("class", "column");
+            reviewCnt.textContent = data.businesses[i].review_count;
+            
+            restaurantInfo.appendChild(price);
+            restaurantInfo.appendChild(ratings);
+            restaurantInfo.appendChild(reviewCnt);
+            content.appendChild(restaurantInfo);
+
+            cardContent.append(content);
+
+
+
             // Name for each restaurant
-            var name = document.createElement("h2")
-            name.textContent = data.businesses[i].name
+            var name = document.createElement("h2");
+            name.textContent = data.businesses[i].name;
             // Address for each restaurant
             var address = document.createElement("p")
             address.textContent = data.businesses[i].location.display_address
-            // Image for each restaurant
-            
             // Price range for each restaurant
             var price = document.createElement("p")
             price.textContent = data.businesses[i].price
@@ -152,16 +198,6 @@ function getData(userLocation, category, price) {
             // Food category type for each restaurant
             var category = document.createElement("p")
             category.textContent = data.businesses[i].categories[0].title
-
-            // Append to the card container
-            card.appendChild(image)
-            card.appendChild(name)
-            card.appendChild(price)
-            card.appendChild(ratings)
-            card.appendChild(reviewCnt)
-            card.appendChild(category)
-            card.appendChild(address)
-            card.appendChild(siteLink)
 
             // Append card to HTML
             document.getElementById("card-container").appendChild(card)

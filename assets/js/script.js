@@ -111,14 +111,10 @@ function getData(userLocation, category, price) {
 
         for (var i = 0; i < 5; i++) {
             // Create a card container for each restaurant information
+            var column = $("<div>");
+            column.attr("class", "column");
             var card = $("<div>");
-            card.attr("class", "card column");
-
-            // <div class="card-image">
-            //     <figure class="image is-4by3">
-            //         <img src="https://bulma.io/images/placeholders/1280x960.png" alt="Placeholder image">
-            //     </figure>
-            // </div>
+            card.attr("class", "card");
 
             // Restaurant image
             var cardImage = $("<div>");
@@ -134,16 +130,7 @@ function getData(userLocation, category, price) {
             cardImage.append(imageFigure);
             card.append(cardImage);
 
-            // <div class="card-content">
-            //     <div class="content">
-            //         Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-            //         Phasellus nec iaculis mauris. <a>@bulmaio</a>.
-            //         <a href="#">#css</a> <a href="#">#responsive</a>
-            //         <br>
-            //             <time datetime="2016-1-1">11:09 PM - 1 Jan 2016</time>
-            //     </div>
-            // </div>
-
+            // Card content
             var cardContent = $("<div>").attr("class", "card-content");
             var content = $("<div>").attr("class", "content");
             // Restaurant name
@@ -190,32 +177,10 @@ function getData(userLocation, category, price) {
             // Append everything to the card
             cardContent.append(content);
             card.append(cardContent);
-
-
-
-            // // Name for each restaurant
-            // var name = document.createElement("h2");
-            // name.textContent = data.businesses[i].name;
-            
-            // // Price range for each restaurant
-            // var price = document.createElement("p")
-            // price.textContent = data.businesses[i].price
-            // // Ratings for each restaurant
-            // var ratings = document.createElement("p")
-            // ratings.textContent = data.businesses[i].rating
-            // // Review count for each restaurant
-            // var reviewCnt = document.createElement("p")
-            // reviewCnt.textContent = data.businesses[i].review_count
-            // // Yelp URL for each restaurant
-            // var siteLink = document.createElement("a")
-            // siteLink.setAttribute("href", data.businesses[i].url)
-            // siteLink.textContent = "Click here to visit the restaurant on Yelp"
-            // // Food category type for each restaurant
-            // var category = document.createElement("p")
-            // category.textContent = data.businesses[i].categories[0].title
+            column.append(card);
 
             // Append card to HTML
-            $("#card-container").append(card)
+            $("#card-container").append(column);
         }
 
     });

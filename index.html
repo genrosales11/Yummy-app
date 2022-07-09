@@ -27,12 +27,21 @@
     <div class="container" id="zipcode">
         <div class="columns is-desktop" id="areacode">
             <div class="column">
-                <form id="locSearchForm">
-                    <label for="city">Enter</label>
-                    <input class="u-full-width" type="text" placeholder="City" id="city-search">
-                    <label for="zip">Or</label>
-                    <input class="u-full-width" type="text" placeholder="Zipcode" id="zip-code-search">
-                </form>
+                <!-- <form id="locSearchForm">
+                    <label for="city">Search location</label>
+                    <input class="u-full-width" type="text" placeholder="city or zip" id="city-search">
+                </form> -->
+
+                <form class="box" id="locSearchForm">
+                    <div class="field">
+                      <label class="label">location</label>
+                      <div class="control">
+                        <input class="input" type="text" placeholder="city or zip" id="city-search">
+                      </div>
+                    </div>
+                    <button class="button is-primary">Sign in</button>
+                </form> 
+
             </div>
             <div class="column" id="dropdown">
                 <label for="cat">Pasta, Tacos, Dine-in</label>
@@ -49,6 +58,7 @@
                 <br>
                 <input class="button-primary" type="submit" value="Submit" id="search-btn">
             </div>
+        
 
         </div>
     </div>
@@ -68,18 +78,6 @@
 
         </div>
 
-
-        <!-- <div class="column is-one-quarter">choice #1 </div>
-    <div class="column">Auto</div>
-    <div class="column">Auto</div>
-    <div class="column">Auto</div> -->
-    </div>
-    <!-- restaurant choices #2 columns-->
-    <div class="columns" id="choices2">
-        <!-- <div class="column is-one-quarter">choice # 2</div>
-    <div class="column">Auto</div>
-    <div class="column">Auto</div>
-    <div class="column">Auto</div> -->
     </div>
 
     <!-- ABOUT SECTION HERE-->

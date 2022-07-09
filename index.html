@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>>
     <link rel="stylesheet" href="assets/css/style.css">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&family=Rubik+Moonrocks&display=swap');
@@ -15,15 +15,7 @@
 
 <body>
     <!-- Header of the page -->
-    <header class="hero">
-        <div class="hero-body">
-          <img class="title" src="/yummy.png" alt="web logo"></img>
-          <ul class="subtitle">
-            <li><a href="#">Home</a></li>
-            <li><a href="#">About</a></li>
-          </ul>
-        </div>
-    </header>
+  
 
     <!-- Main section for the content -->
     <main>
@@ -49,18 +41,59 @@
                 <p class="control">
                   <span class="select">
                     <select>
-                      <option>Dropdown</option>
+                      
+                      <option value=""></option>
+                      <option value="Mexican">Mexican</option>
+                      <option value="Italian">Italian</option>
+                      <option value="Peruvian">Peruvian</option>
+                      <option value="American">American</option>
+                      <option value="Japanese">Japanese</option>
                     </select>
                   </span>
                 </p>
               </div>
         
               <div class="buttons">
-                <a class="button is-primary">Primary</a>
-                <a class="button is-link">Link</a>
+                <a class="button is-primary">Submit</a>
+                
               </div>
             <!-- Dropdown for the food category -->
-            <div id="food-category"></div>
+            <div id="food-category">
+                <div class="dropdown">
+                    <div class="dropdown-trigger">
+                      <button class="button" aria-haspopup="true" aria-controls="dropdown-menu">
+                        <span>Select</span>
+                        <span class="icon is-small">
+                          <i class="fas fa-angle-down" aria-hidden="true"></i>
+                        </span>
+                      </button>
+                    </div>
+                    <div class="dropdown-menu" id="dropdown-menu" role="menu">
+                      <div class="dropdown-content">
+                        
+                        <div class="dropdown-item" value="Mexican">
+                         Mexican
+                        </div>
+                        <div class="dropdown-item" value="Italian">
+                          Italian
+                        </div>
+                        <div class="dropdown-item" value=" Peruvian">
+                           Peruvian
+                        </div>
+                        <div class="dropdown-item" value="American">
+                          American
+                        </div>
+                        <div class="dropdown-item" value="Japanese">
+                         Japanese
+                        </div>
+                       
+                       
+                      </div>
+                    <!--</div>-->
+
+                  </div>
+                       
+            </div>
             <!-- Radio buttons to select price point ($, $$, $$$) -->
             <div id="price-point"></div>
             <!-- Search button -->
@@ -71,7 +104,9 @@
         <section id="map"></section>
 
         <!-- Section to display search results -->
-        <section class="display-results"></section>
+        <section class="display-results columns">
+
+        </section>
     </main>
 
     <!-- <div class="container" id="zipcode">

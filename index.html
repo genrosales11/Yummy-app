@@ -10,18 +10,23 @@
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&family=Rubik+Moonrocks&display=swap');
     </style>
+    <script src="https://cdn.tailwindcss.com"></script>
     <title>Yummy App</title>
 </head>
 
 <body>
     <!-- Header of the page -->
-    <header class="hero">
-        <div class="hero-body">
-          <img class="title" src="./assets/images/yummy.png" alt="web logo"></img>
-          <ul class="subtitle">
-            <li><a href="#">Home</a></li>
-            <li><a href="#">About</a></li>
-          </ul>
+    <header class="relative bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6">
+            <div
+                class="flex justify-between items-center border-b-2 border-gray-100 py-6 md:justify-start md:space-x-10">
+                <div class="flex justify-start lg:w-0 lg:flex-1">
+                    <a href="#">
+                        <span class="sr-only">Workflow</span>
+                        <img class="w-30 h-auto sm:h-12" src="./assets/images/yummy.png" alt="">
+                    </a>
+                </div>
+            </div>
         </div>
     </header>
 
@@ -42,12 +47,7 @@
             <div id="city-or-zipcode"></div>
             <!-- Dropdown for the food category -->
             <div id="food-category"></div>
-            <!-- Radio buttons to select price point ($, $$, $$$) -->
-            <div id="price-point"></div>
-            <!-- Search button -->
-            <div id="search-btn"></div>
         </section>
-
         <!-- Section for the map -->
         <section id="map"></section>
 
@@ -55,7 +55,7 @@
         <section class="display-results"></section>
     </main>
 
-    <!-- <div class="container" id="zipcode">
+    <div class="container" id="zipcode">
         <div class="columns is-desktop" id="areacode">
             <div class="column">    
                 <form id="locSearchForm">
@@ -67,13 +67,13 @@
             </div>
             <div class="column" id="dropdown">
                 <label for="cat">Pasta, Tacos, Dine-in</label>
-                <select class="u-full-width" id="chooseCategory">
+                <select class="u-full-width" id="choose-category">
                 <option value="Option 1">restaurants</option>
-                <option value="Option 2">Mexican</option>
-                <option value="Option 3">Italian</option>
-                <option value="Option 3">Peruvian</option>
-                <option value="Option 3">American</option>
-                <option value="Option 3">Japanese</option>
+                <option value="Mexican">Mexican</option>
+                <option value="Italian">Italian</option>
+                <option value="Peruvian">Peruvian</option>
+                <option value="American">American</option>
+                <option value="Japanese">Japanese</option>
                 </select>
                 <br>
                 <br>
@@ -81,7 +81,7 @@
             </div>
         
         </div>
-    </div> -->
+    </div>
 
     <!-- map container -->
     <!-- <div class="container" id="map">
@@ -91,25 +91,12 @@
 
     <!-- restaurant choices #1 columns-->
 
-    <!-- <div class="columns" id="choices">
+    <div class="columns" id="choices">
         <div id="card-container">
 
-        </div> -->
+        </div>
+    </div>
 
-
-        <!-- <div class="column is-one-quarter">choice #1 </div>
-        <div class="column">Auto</div>
-        <div class="column">Auto</div>
-        <div class="column">Auto</div> -->
-    <!-- </div> -->
-    <!-- restaurant choices #2 columns-->
-    <!-- <div class="columns" id="choices2"> -->
-        <!-- <div class="column is-one-quarter">choice # 2</div>
-        <div class="column">Auto</div>
-        <div class="column">Auto</div>
-        <div class="column">Auto</div> -->
-    <!-- </div> -->
-    
     <!-- ABOUT SECTION HERE-->
     <!-- <div class="container" id="about">
     <div class="about-section">
@@ -122,7 +109,8 @@
     <footer class="footer">
         <div class="content has-text-centered">
             <p>
-                <strong>Yummy App<img src="./assets/images/yummy.png" alt="web logo"></strong> by Laura Sierra, Marry Dillon and Genesis Rosales
+                <strong>Yummy App<img src="./assets/images/yummy.png" alt="web logo"></strong> by Laura Sierra, Marry
+                Dillon and Genesis Rosales
             </p>
         </div>
     </footer>

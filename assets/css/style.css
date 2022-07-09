@@ -143,3 +143,38 @@ img {
 .footer p:hover {
     color: blanchedalmond;
 } */
+
+.container{
+    display: flex;
+    justify-content: center;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.choice-section{
+    display: block;
+    justify-content: center;
+    width: 600px;
+    text-align: center;
+    margin-top: 50px;
+}
+
+
+
+.intro-section{
+    width: 300px;
+}
+
+header{
+    height: 100px;
+    background-color: #FEF1E9
+}
+
+.logo{
+    padding-top: 20px;
+    padding-left: 40px;
+}
+
+#map{
+    background-color: #F3DAEB;
+}
+

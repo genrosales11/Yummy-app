@@ -105,7 +105,7 @@ function getData(userLocation, category, price) {
     }).then(function (data) {
         console.log(data)
 
-        for (i = 0; i < 5; i++) {
+        for (var i = 0; i < 5; i++) {
             // Create a card container for each restaurant information
             var card = document.createElement("div");
             card.setAttribute("class", "card column");
@@ -124,23 +124,11 @@ function getData(userLocation, category, price) {
             var image = document.createElement("img");
             image.src = data.businesses[i].image_url;
             image.alt = "Restaurant image";
-            imageFigure.appendChild(image);
-            cardImage.appendChild(imageFigure);
+            imageFigure.append(image);
+            cardImage.append(imageFigure);
             card.append(cardImage);
 
             // <div class="card-content">
-            //     <div class="media">
-            //         <div class="media-left">
-            //             <figure class="image is-48x48">
-            //                 <img src="https://bulma.io/images/placeholders/96x96.png" alt="Placeholder image">
-            //             </figure>
-            //         </div>
-            //         <div class="media-content">
-            //             <p class="title is-4">John Smith</p>
-            //             <p class="subtitle is-6">@johnsmith</p>
-            //         </div>
-            //     </div>
-
             //     <div class="content">
             //         Lorem ipsum dolor sit amet, consectetur adipiscing elit.
             //         Phasellus nec iaculis mauris. <a>@bulmaio</a>.
@@ -153,7 +141,9 @@ function getData(userLocation, category, price) {
             var cardContent = document.createElement("div").setAttribute("class", "card-content");
             var content = document.createElement("div").setAttribute("class", "content");
             // Restaurant name
-            content.appendChild(data.businesses[i].name);
+            var name = document.createElement("h2");
+            name.textContent = data.businesses[i].name;
+            content.append(name);
 
             // Row with columns for dollar sign, ratings, review count
             var restaurantInfo = document.createElement("div").setAttribute("class", "columns");
@@ -167,40 +157,59 @@ function getData(userLocation, category, price) {
             var reviewCnt = document.createElement("p").setAttribute("class", "column");
             reviewCnt.textContent = data.businesses[i].review_count;
             
-            restaurantInfo.appendChild(price);
-            restaurantInfo.appendChild(ratings);
-            restaurantInfo.appendChild(reviewCnt);
-            content.appendChild(restaurantInfo);
+            restaurantInfo.append(price);
+            restaurantInfo.append(ratings);
+            restaurantInfo.append(reviewCnt);
 
-            cardContent.append(content);
-
-
-
-            // Name for each restaurant
-            var name = document.createElement("h2");
-            name.textContent = data.businesses[i].name;
+            
+            // Food category type for each restaurant
+            var category = document.createElement("p");
+            category.textContent = data.businesses[i].categories[0].title;
+            
             // Address for each restaurant
-            var address = document.createElement("p")
-            address.textContent = data.businesses[i].location.display_address
-            // Price range for each restaurant
-            var price = document.createElement("p")
-            price.textContent = data.businesses[i].price
-            // Ratings for each restaurant
-            var ratings = document.createElement("p")
-            ratings.textContent = data.businesses[i].rating
-            // Review count for each restaurant
-            var reviewCnt = document.createElement("p")
-            reviewCnt.textContent = data.businesses[i].review_count
+            var address = document.createElement("p");
+            address.textContent = data.businesses[i].location.display_address;
+            
             // Yelp URL for each restaurant
             var siteLink = document.createElement("a")
             siteLink.setAttribute("href", data.businesses[i].url)
             siteLink.textContent = "Click here to visit the restaurant on Yelp"
-            // Food category type for each restaurant
-            var category = document.createElement("p")
-            category.textContent = data.businesses[i].categories[0].title
+
+            // Keep appending to this
+            content.append(restaurantInfo);
+            content.append(category);
+            content.append(address);
+            content.append(siteLink);
+
+            // Append everything to the card
+            cardContent.append(content);
+            card.append(cardContent);
+
+
+
+            // // Name for each restaurant
+            // var name = document.createElement("h2");
+            // name.textContent = data.businesses[i].name;
+            
+            // // Price range for each restaurant
+            // var price = document.createElement("p")
+            // price.textContent = data.businesses[i].price
+            // // Ratings for each restaurant
+            // var ratings = document.createElement("p")
+            // ratings.textContent = data.businesses[i].rating
+            // // Review count for each restaurant
+            // var reviewCnt = document.createElement("p")
+            // reviewCnt.textContent = data.businesses[i].review_count
+            // // Yelp URL for each restaurant
+            // var siteLink = document.createElement("a")
+            // siteLink.setAttribute("href", data.businesses[i].url)
+            // siteLink.textContent = "Click here to visit the restaurant on Yelp"
+            // // Food category type for each restaurant
+            // var category = document.createElement("p")
+            // category.textContent = data.businesses[i].categories[0].title
 
             // Append card to HTML
-            document.getElementById("card-container").appendChild(card)
+            document.getElementById("card-container").append(card)
         }
 
     });

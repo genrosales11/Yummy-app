@@ -61,7 +61,8 @@
 var searchBtn = document.getElementById("search-btn")
 // Pointer to the users selection of food category
 var catSearch = document.getElementById("choose-category")
-
+// Pointer to the price ranges
+var pricePoint = document.querySelector('input[name="foobar"]')
 
 // Function to grab user input and pass it to the Yelp API
 function cityInput(event) {
@@ -69,15 +70,24 @@ function cityInput(event) {
 
     var userLocation = document.getElementById("city-search").value;
     var category = catSearch.value;
+    // var price = pricePoint.value
 
-    // Yelp API
-    getData(userLocation, category);
+    var price = document.getElementsByName('foobar');
+
+    for (var i = 0, length = price.length; i < length; i++) {
+        if (price[i].checked) {
+            price = price[i].value;
+            break;
+        }
+    }
+
+    getData(userLocation, category, price);
 }
 
-// Call yelp api
-function getData(userLocation, category) {
-    let queryURL = `https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?location=${userLocation}&term=${category}`;
-    const apiKey = 'S9-0qQhgv6fiYrqXXE9X-TIZd1aepWF1BA6eT6_wQnQXtp8R1SVNuaXBGaZO15-IizPiprlRb6IT7v_gz_Dfl7yzGpZD_sCSnedvAD89GvwKGf85mwqLPWc5JGjIYnYx';
+// call yelp api
+function getData(userLocation, category, price) {
+    let queryURL = `https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?location=${userLocation}&term=${category}&price=${price}`;
+    const apiKey = 'S9-0qQhgv6fiYrqXXE9X-TIZd1aepWF1BA6eT6_wQnQXtp8R1SVNuaXBGaZO15-IizPiprlRb6IT7v_gz_Dfl7yzGpZD_sCSnedvAD89GvwKGf85mwqLPWc5JGjIYnYx'
 
     $.ajax({
         url: queryURL,
@@ -143,18 +153,5 @@ function getData(userLocation, category) {
 
 }
 
-function addCat() {
-    console.log(catSearch.value)
-}
-
-
 // Call Yelp API once the user clicks the "Search" button
 searchBtn.addEventListener("click", cityInput)
-
- 
-// Bulma dropdown event listener
-var dropdown = document.querySelector('.dropdown');
-dropdown.addEventListener('click', function(event) {
-  event.stopPropagation();
-  dropdown.classList.toggle('is-active');
-});

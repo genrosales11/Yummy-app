@@ -6,7 +6,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
-    <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="assets/css/style.css">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&family=Rubik+Moonrocks&display=swap');
@@ -17,8 +16,8 @@
 <body>
     <!-- Header of the page -->
     <header>
-        <div class="logo">
-            <img class="w-30 h-auto sm:h-12" src="./assets/images/yummy.png" alt="">
+        <div class="logo-div">
+            <img class="logo" src="./assets/images/yummy.png" alt="">
         </div>
     </header>
 
@@ -65,21 +64,21 @@
 
                     <!-- Radio buttons to select price point ($, $$, $$$) -->
                     <div id="price-point">
-                        <div class="control">
-                            <label class="radio">
-                                <input type="radio" value="$" name="foobar">
+                        <div class="control" id="prices">
+                            <label class="radio" >
+                                <input type="radio" value="1" name="foobar">
                                 $
                             </label>
                             <label class="radio">
-                                <input type="radio" value="$$" name="foobar" checked>
+                                <input type="radio" value="2" name="foobar">
                                 $$
                             </label>
                             <label class="radio">
-                                <input type="radio" value="$$$" name="foobar" checked>
+                                <input type="radio" value="3" name="foobar">
                                 $$$
                             </label>
                             <label class="radio">
-                                <input type="radio" value="$$$$" name="foobar" checked>
+                                <input type="radio" value="4" name="foobar">
                                 $$$$
                             </label>
                         </div>
@@ -117,7 +116,7 @@
     <footer class="footer">
         <div class="content has-text-centered">
             <p>
-                <strong>Yummy App<img src="./assets/images/yummy.png" alt="web logo"></strong> by Laura Sierra, Marry
+                <strong>Yummy App<img class="logo" src="./assets/images/yummy.png" alt="web logo"></strong> by Laura Sierra, Marry
                 Dillon and Genesis Rosales
             </p>
         </div>

@@ -106,9 +106,28 @@ function getData(userLocation, category, price) {
         console.log(data)
 
         for (i = 0; i < 5; i++) {
-            // Create a card for each restaurant information
-            var card = document.createElement("div")
-            card.classList.add("card-class")
+            // Create a card container for each restaurant information
+            var card = document.createElement("div");
+            card.setAttribute("class", "card column");
+
+            // <div class="card-image">
+            //     <figure class="image is-4by3">
+            //         <img src="https://bulma.io/images/placeholders/1280x960.png" alt="Placeholder image">
+            //     </figure>
+            // </div>
+
+            // Restaurant image
+            var cardImage = document.createElement("div");
+            cardImage.setAttribute("class", "card-image");
+            var imageFigure = document.createElement("figure");
+            imageFigure.setAttribute("class", "image is-4by3");
+            var image = document.createElement("img");
+            image.src = data.businesses[i].image_url;
+            image.alt = "Restaurant image";
+            imageFigure.appendChild(image)
+            cardImage.appendChild(imageFigure);
+            card.append(cardImage);
+
             // Name for each restaurant
             var name = document.createElement("h2")
             name.textContent = data.businesses[i].name
@@ -116,8 +135,7 @@ function getData(userLocation, category, price) {
             var address = document.createElement("p")
             address.textContent = data.businesses[i].location.display_address
             // Image for each restaurant
-            var image = document.createElement("img")
-            image.src = data.businesses[i].image_url
+            
             // Price range for each restaurant
             var price = document.createElement("p")
             price.textContent = data.businesses[i].price
@@ -130,7 +148,7 @@ function getData(userLocation, category, price) {
             // Yelp URL for each restaurant
             var siteLink = document.createElement("a")
             siteLink.setAttribute("href", data.businesses[i].url)
-            siteLink.textContent= "Click here to visit the restaurant on Yelp"
+            siteLink.textContent = "Click here to visit the restaurant on Yelp"
             // Food category type for each restaurant
             var category = document.createElement("p")
             category.textContent = data.businesses[i].categories[0].title
@@ -144,8 +162,8 @@ function getData(userLocation, category, price) {
             card.appendChild(category)
             card.appendChild(address)
             card.appendChild(siteLink)
+
             // Append card to HTML
-            appendCard(card)
             document.getElementById("card-container").appendChild(card)
         }
 

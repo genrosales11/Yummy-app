@@ -149,9 +149,12 @@ function addCat() {
 }
 
 
+<<<<<<< HEAD
 
 
 searchBtn.addEventListener("click", cityInput)
+=======
+>>>>>>> 53de35c93e84bcfe396251521171061dfd1b01cf
 
 
 var dropdown = document.querySelector('.dropdown');

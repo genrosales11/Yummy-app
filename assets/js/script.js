@@ -64,6 +64,7 @@ var catSearch = document.getElementById("choose-category")
 // Pointer to the price ranges
 var pricePoint = document.querySelector('input[name="foobar"]')
 
+
 // Function to grab user input and pass it to the Yelp API
 function cityInput(event) {
     // Empty container
@@ -154,7 +155,7 @@ function getData(userLocation, category, price) {
             var restaurantInfo = $("<div>").attr("class", "columns");
             // Price range for each restaurant
             var price = $("<p>").attr("class", "column");
-            price.textContent = data.businesses[i].price;
+            price.text(data.businesses[i].price);
             // Ratings for each restaurant
             var ratings = $("<p>").attr("class", "column");
             ratings.text(data.businesses[i].rating);

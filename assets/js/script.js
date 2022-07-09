@@ -60,7 +60,6 @@
 
 var searchBtn = document.getElementById("search-btn")
 var catSearch = document.getElementById("choose-category")
-var pricePoint = document.querySelector('input[name="foobar"]')
 
 
 

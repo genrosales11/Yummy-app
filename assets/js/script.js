@@ -1,44 +1,27 @@
-// // Initialize Google Maps API
+// ------------------------------------- MAPS API -------------------------------------
 // var map;
-// // Dummy data to display restaurants in a given area
-// var restaurants = [
-//     {
-//         name: "Hawkers Asian Street Food",
-//         lat: 28.560418,
-//         lng: -81.364372
-//     },
-//     {
-//         name: "Izziban Sushi & BBQ",
-//         lat: 28.5535468,
-//         lng: -81.3222981
-//     }
-// ];
-
-
 
 // // Function that displays markers on the map for each restaurant
-// function setMarkers(map) {
-//     restaurants.forEach(res => {
-//         var marker = new google.maps.Marker({
-//             position: new google.maps.LatLng(res.lat, res.lng),
-//             title: res.name
-//         })
+// function setMarkers(restaurant) {        
+//     var marker = new google.maps.Marker({
+//         position: new google.maps.LatLng(restaurant.coordinates.latitude, restaurant.coordinates.longitude),
+//         title: restaurant.name
+//     })
 
-//         // To add marker to the map
-//         marker.setMap(map);
+//     // To add marker to the map
+//     marker.setMap(map);
 
-//         // Add an info window for each marker
-//         var infoWindow = new google.maps.InfoWindow({
-//             content: res.name
-//         })
+//     // Add an info window for each marker
+//     var infoWindow = new google.maps.InfoWindow({
+//         content: restaurant.name
+//     })
 
-//         // Clicking at the marker displays the marker's associated restaurant name
-//         marker.addListener("click", () => {
-//             infoWindow.open({
-//                 anchor: marker,
-//                 map,
-//                 shouldFocus: false
-//             })
+//     // Clicking at the marker displays the marker's associated restaurant name
+//     marker.addListener("click", () => {
+//         infoWindow.open({
+//             anchor: marker,
+//             map,
+//             shouldFocus: false
 //         })
 //     })
 // }
@@ -46,16 +29,14 @@
 // // Google Maps API function to display map
 // function initMap() {
 //     map = new google.maps.Map(document.getElementById("map"), {
-//         center: { lat: 28.538902, lng: -81.378981 },
-//         zoom: 12
+//         // Dummy data to populate map's center to remove error
+//         center: { lat: 37.0902, lng: -95.7129 },
+//         zoom: 10
 //     })
-
-//     // Dummy data: for each restaurant in the list, show the marker on the map
-//     setMarkers(map);
-
 // }
-
 // window.initMap = initMap;
+
+// ------------------------------------- YELP API -------------------------------------
 
 // Pointer to the search button
 var searchBtn = document.getElementById("search-btn")
@@ -69,6 +50,8 @@ var pricePoint = document.querySelector('input[name="foobar"]')
 function cityInput(event) {
     // Empty container
     $("#card-container").empty();
+    // Recall map to remove previous markers
+    // initMap();
 
     event.preventDefault();
 
@@ -109,7 +92,19 @@ function getData(userLocation, category, price) {
     }).then(function (data) {
         console.log(data)
 
+        // Grab the center coordinates of the results to set it as the map's center
+        // var center = { lat: data.region.center.latitude, lng: data.region.center.longitude };
+        // // Set center of map based on the data's center
+        // map.setCenter(center);
+        // // Display map
+        // $("#map").css("height", "300px");
+        // $("#map").css("width", "100%");
+
+
         for (var i = 0; i < 5; i++) {
+            // Get coordinates to populate map
+            // setMarkers(data.businesses[i]);
+
             // Create a card container for each restaurant information
             var column = $("<div>");
             column.attr("class", "column");
@@ -166,6 +161,7 @@ function getData(userLocation, category, price) {
             // Yelp URL for each restaurant
             var siteLink = $("<a>");
             siteLink.attr("href", data.businesses[i].url);
+            siteLink.attr("target", "_blank");
             siteLink.text("Click here to visit the restaurant on Yelp");
 
             // Keep appending to this
@@ -182,7 +178,6 @@ function getData(userLocation, category, price) {
             // Append card to HTML
             $("#card-container").append(column);
         }
-
     });
 
 }

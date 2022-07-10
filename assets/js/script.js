@@ -165,6 +165,7 @@ function getData(userLocation, category, price) {
             // Yelp URL for each restaurant
             var siteLink = $("<a>");
             siteLink.attr("href", data.businesses[i].url);
+            siteLink.attr("target", "_blank");
             siteLink.text("Click here to visit the restaurant on Yelp");
 
             // Keep appending to this

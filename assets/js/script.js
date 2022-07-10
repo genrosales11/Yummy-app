@@ -1,40 +1,40 @@
 // ------------------------------------- MAPS API -------------------------------------
-var map;
+// var map;
 
-// Function that displays markers on the map for each restaurant
-function setMarkers(restaurant) {        
-    var marker = new google.maps.Marker({
-        position: new google.maps.LatLng(restaurant.coordinates.latitude, restaurant.coordinates.longitude),
-        title: restaurant.name
-    })
+// // Function that displays markers on the map for each restaurant
+// function setMarkers(restaurant) {        
+//     var marker = new google.maps.Marker({
+//         position: new google.maps.LatLng(restaurant.coordinates.latitude, restaurant.coordinates.longitude),
+//         title: restaurant.name
+//     })
 
-    // To add marker to the map
-    marker.setMap(map);
+//     // To add marker to the map
+//     marker.setMap(map);
 
-    // Add an info window for each marker
-    var infoWindow = new google.maps.InfoWindow({
-        content: restaurant.name
-    })
+//     // Add an info window for each marker
+//     var infoWindow = new google.maps.InfoWindow({
+//         content: restaurant.name
+//     })
 
-    // Clicking at the marker displays the marker's associated restaurant name
-    marker.addListener("click", () => {
-        infoWindow.open({
-            anchor: marker,
-            map,
-            shouldFocus: false
-        })
-    })
-}
+//     // Clicking at the marker displays the marker's associated restaurant name
+//     marker.addListener("click", () => {
+//         infoWindow.open({
+//             anchor: marker,
+//             map,
+//             shouldFocus: false
+//         })
+//     })
+// }
 
-// Google Maps API function to display map
-function initMap() {
-    map = new google.maps.Map(document.getElementById("map"), {
-        // Dummy data to populate map's center to remove error
-        center: { lat: 37.0902, lng: -95.7129 },
-        zoom: 10
-    })
-}
-window.initMap = initMap;
+// // Google Maps API function to display map
+// function initMap() {
+//     map = new google.maps.Map(document.getElementById("map"), {
+//         // Dummy data to populate map's center to remove error
+//         center: { lat: 37.0902, lng: -95.7129 },
+//         zoom: 10
+//     })
+// }
+// window.initMap = initMap;
 
 // ------------------------------------- YELP API -------------------------------------
 
@@ -51,7 +51,7 @@ function cityInput(event) {
     // Empty container
     $("#card-container").empty();
     // Recall map to remove previous markers
-    initMap();
+    // initMap();
 
     event.preventDefault();
 
@@ -93,17 +93,17 @@ function getData(userLocation, category, price) {
         console.log(data)
 
         // Grab the center coordinates of the results to set it as the map's center
-        var center = { lat: data.region.center.latitude, lng: data.region.center.longitude };
-        // Set center of map based on the data's center
-        map.setCenter(center);
-        // Display map
-        $("#map").css("height", "300px");
-        $("#map").css("width", "100%");
+        // var center = { lat: data.region.center.latitude, lng: data.region.center.longitude };
+        // // Set center of map based on the data's center
+        // map.setCenter(center);
+        // // Display map
+        // $("#map").css("height", "300px");
+        // $("#map").css("width", "100%");
 
 
         for (var i = 0; i < 5; i++) {
             // Get coordinates to populate map
-            setMarkers(data.businesses[i]);
+            // setMarkers(data.businesses[i]);
 
             // Create a card container for each restaurant information
             var column = $("<div>");

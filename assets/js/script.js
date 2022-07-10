@@ -1,10 +1,9 @@
 // ------------------------------------- MAPS API -------------------------------------
 var map;
-var marker;
 
 // Function that displays markers on the map for each restaurant
 function setMarkers(restaurant) {        
-    marker = new google.maps.Marker({
+    var marker = new google.maps.Marker({
         position: new google.maps.LatLng(restaurant.coordinates.latitude, restaurant.coordinates.longitude),
         title: restaurant.name
     })
@@ -52,7 +51,7 @@ function cityInput(event) {
     // Empty container
     $("#card-container").empty();
     // Recall map to remove previous markers
-    if (marker) initMap();
+    initMap();
 
     event.preventDefault();
 
@@ -92,9 +91,6 @@ function getData(userLocation, category, price) {
         }
     }).then(function (data) {
         console.log(data)
-
-        // Empty map
-        // marker.setMap(null);
 
         // Grab the center coordinates of the results to set it as the map's center
         var center = { lat: data.region.center.latitude, lng: data.region.center.longitude };

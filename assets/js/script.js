@@ -1,22 +1,7 @@
-// // Initialize Google Maps API
-// var map;
-// // Dummy data to display restaurants in a given area
-// var restaurants = [
-//     {
-//         name: "Hawkers Asian Street Food",
-//         lat: 28.560418,
-//         lng: -81.364372
-//     },
-//     {
-//         name: "Izziban Sushi & BBQ",
-//         lat: 28.5535468,
-//         lng: -81.3222981
-//     }
-// ];
+// ------------------------------------- MAPS API -------------------------------------
+var map;
 
-
-
-// // Function that displays markers on the map for each restaurant
+// Function that displays markers on the map for each restaurant
 // function setMarkers(map) {
 //     restaurants.forEach(res => {
 //         var marker = new google.maps.Marker({
@@ -43,19 +28,20 @@
 //     })
 // }
 
-// // Google Maps API function to display map
-// function initMap() {
-//     map = new google.maps.Map(document.getElementById("map"), {
-//         center: { lat: 28.538902, lng: -81.378981 },
-//         zoom: 12
-//     })
+// Google Maps API function to display map
+function initMap() {
+    map = new google.maps.Map(document.getElementById("map"), {
+        // Dummy data to populate map's center to remove error
+        center: { lat: 37.0902, lng: -95.7129 },
+        zoom: 12
+    })
 
-//     // Dummy data: for each restaurant in the list, show the marker on the map
-//     setMarkers(map);
+    // Dummy data: for each restaurant in the list, show the marker on the map
+    // setMarkers(map);
+}
+window.initMap = initMap;
 
-// }
-
-// window.initMap = initMap;
+// ------------------------------------- YELP API -------------------------------------
 
 // Pointer to the search button
 var searchBtn = document.getElementById("search-btn")
@@ -108,6 +94,15 @@ function getData(userLocation, category, price) {
         }
     }).then(function (data) {
         console.log(data)
+
+        // Grab the center coordinates of the results to set it as the map's center
+        var center = { lat: data.region.center.latitude, lng: data.region.center.longitude };
+        // Set center of map based on the data's center
+        map.setCenter(center);
+        // Display map
+        $("#map").css("height", "300px");
+        $("#map").css("width", "100%");
+
 
         for (var i = 0; i < 5; i++) {
             // Create a card container for each restaurant information

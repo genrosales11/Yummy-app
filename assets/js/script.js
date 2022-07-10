@@ -1,9 +1,10 @@
 // ------------------------------------- MAPS API -------------------------------------
 var map;
+var marker;
 
 // Function that displays markers on the map for each restaurant
-function setMarkers(restaurant) {
-    var marker = new google.maps.Marker({
+function setMarkers(restaurant) {        
+    marker = new google.maps.Marker({
         position: new google.maps.LatLng(restaurant.coordinates.latitude, restaurant.coordinates.longitude),
         title: restaurant.name
     })
@@ -31,11 +32,8 @@ function initMap() {
     map = new google.maps.Map(document.getElementById("map"), {
         // Dummy data to populate map's center to remove error
         center: { lat: 37.0902, lng: -95.7129 },
-        zoom: 12
+        zoom: 10
     })
-
-    // Dummy data: for each restaurant in the list, show the marker on the map
-    // setMarkers(map);
 }
 window.initMap = initMap;
 
@@ -53,6 +51,8 @@ var pricePoint = document.querySelector('input[name="foobar"]')
 function cityInput(event) {
     // Empty container
     $("#card-container").empty();
+    // Recall map to remove previous markers
+    if (marker) initMap();
 
     event.preventDefault();
 
@@ -92,6 +92,9 @@ function getData(userLocation, category, price) {
         }
     }).then(function (data) {
         console.log(data)
+
+        // Empty map
+        // marker.setMap(null);
 
         // Grab the center coordinates of the results to set it as the map's center
         var center = { lat: data.region.center.latitude, lng: data.region.center.longitude };
@@ -178,7 +181,6 @@ function getData(userLocation, category, price) {
             // Append card to HTML
             $("#card-container").append(column);
         }
-
     });
 
 }

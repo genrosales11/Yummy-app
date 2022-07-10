@@ -2,31 +2,29 @@
 var map;
 
 // Function that displays markers on the map for each restaurant
-// function setMarkers(map) {
-//     restaurants.forEach(res => {
-//         var marker = new google.maps.Marker({
-//             position: new google.maps.LatLng(res.lat, res.lng),
-//             title: res.name
-//         })
+function setMarkers(restaurant) {
+    var marker = new google.maps.Marker({
+        position: new google.maps.LatLng(restaurant.coordinates.latitude, restaurant.coordinates.longitude),
+        title: restaurant.name
+    })
 
-//         // To add marker to the map
-//         marker.setMap(map);
+    // To add marker to the map
+    marker.setMap(map);
 
-//         // Add an info window for each marker
-//         var infoWindow = new google.maps.InfoWindow({
-//             content: res.name
-//         })
+    // Add an info window for each marker
+    var infoWindow = new google.maps.InfoWindow({
+        content: restaurant.name
+    })
 
-//         // Clicking at the marker displays the marker's associated restaurant name
-//         marker.addListener("click", () => {
-//             infoWindow.open({
-//                 anchor: marker,
-//                 map,
-//                 shouldFocus: false
-//             })
-//         })
-//     })
-// }
+    // Clicking at the marker displays the marker's associated restaurant name
+    marker.addListener("click", () => {
+        infoWindow.open({
+            anchor: marker,
+            map,
+            shouldFocus: false
+        })
+    })
+}
 
 // Google Maps API function to display map
 function initMap() {
@@ -105,6 +103,9 @@ function getData(userLocation, category, price) {
 
 
         for (var i = 0; i < 5; i++) {
+            // Get coordinates to populate map
+            setMarkers(data.businesses[i]);
+
             // Create a card container for each restaurant information
             var column = $("<div>");
             column.attr("class", "column");

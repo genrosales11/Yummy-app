@@ -149,7 +149,16 @@ function displayCard(business) {
     // Append card to HTML
     $("#card-container").append(column);
 
-    return [business.image_url, business.name, business.price, business.rating, business.review_count, business.categories[0].title, business.location.display_address, business.url]
+    return {
+        imageURL: business.image_url, 
+        name: business.name, 
+        price: business.price, 
+        rating: business.rating, 
+        reviewCnt: business.review_count, 
+        category: business.categories[0].title, 
+        address: business.location.display_address, 
+        URL: business.url
+    }
 }
 
 // call yelp api
@@ -203,8 +212,9 @@ function getData(userLocation, category, price) {
                 restaurantsInfo.push(displayCard(data.businesses[i]));
             }
             console.log(restaurantsInfo);
-            // Save restaurant info to local storage
-            setLocalStorage(userLocation, category, price, restaurantsInfo);
+            // Save restaurant info to local storage (only most recent)
+            localStorage.clear();
+            setLocalStorage(userLocation, category, price, restaurantsInfo, data.region.center);
         }
     });
 }
@@ -212,19 +222,62 @@ function getData(userLocation, category, price) {
 
 // ------------------------------------- LOCAL STORAGE -------------------------------------
 // Save to local storage user input and its results
-function setLocalStorage(userLocation, category, price, resArray) {
+function setLocalStorage(userLocation, category, price, resArray, dataCenter) {
     var search = {
         userLocation: userLocation,
         category: category,
         price: price,
+        dataCenter: dataCenter,
         restaurants: resArray
     }
 
     localStorage.setItem(userLocation, JSON.stringify(search));
 }
 
-function getLocalStorage() {
+// Button to display user's last search
+var prevSearchBtn = $("#prev-search-btn");
+prevSearchBtn.click(getLocalStorage);
 
+// Get user's last search to populate page
+function getLocalStorage() {
+    // Get the key on local storage
+    var key = localStorage.key(0);
+    // Retrieve values
+    var results = JSON.parse(localStorage.getItem(key));
+    console.log(results);
+
+    // Populate page with retrieved data
+    // 1. Populate map
+    initMap();
+    var center = { lat: results.dataCenter.latitude, lng: results.dataCenter.longitude };
+    map.setCenter(center);
+    $("#map").css("height", "300px");
+    $("#map").css("width", "100%");
+
+    // 2. Display restaurants
+    // results.restaurants.forEach(restaurant => {
+    //     // imageURL: business.image_url, 
+    //     // name: business.name, 
+    //     // price: business.price, 
+    //     // rating: business.rating, 
+    //     // reviewCnt: business.review_count, 
+    //     // category: business.categories[0].title, 
+    //     // address: business.location.display_address, 
+    //     // URL: business.url
+
+    //     // Format so it works with displayCard()
+    //     var res = {
+    //         image_url: restaurant.imageURL,
+    //         name: restaurant.name,
+    //         price: restaurant.price,
+    //         rating: restaurant.rating,
+    //         review_count: restaurant.reviewCnt,
+    //         categories: [{ title: restaurant.category }],
+    //         location: { display_address: restaurant.address },
+    //         url: restaurant.URL
+    //     }
+    //     displayCard(res);
+    // })
 }
 
 

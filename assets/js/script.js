@@ -155,7 +155,7 @@ function getData(userLocation, category, price) {
                 ratings.text(data.businesses[i].rating + " / 5");
                 // Review count for each restaurant
                 var reviewCnt = $("<p>").attr("class", "column");
-                reviewCnt.text(data.businesses[i].review_count + " reviews");
+                reviewCnt.text(data.businesses[i].review_count + " revs");
                 
                 restaurantInfo.append(price);
                 restaurantInfo.append(ratings);

@@ -100,86 +100,96 @@ function getData(userLocation, category, price) {
         // $("#map").css("height", "300px");
         // $("#map").css("width", "100%");
 
-
-        for (var i = 0; i < 5; i++) {
-            // Get coordinates to populate map
-            // setMarkers(data.businesses[i]);
-
-            // Create a card container for each restaurant information
+        // If no restaurants are returned
+        if (data.businesses.length === 0) {
             var column = $("<div>");
             column.attr("class", "column");
-            var card = $("<div>");
-            card.attr("class", "card");
+            var message = $("<h2>");
+            message.text("Oh no! No restaurants are available with your given preferences. Try something else!");
+            column.append(message);
 
-            // Restaurant image
-            var cardImage = $("<div>");
-            cardImage.attr("class", "card-image");
-            var imageFigure = $("<figure>");
-            imageFigure.attr("class", "image is-4by3");
-            var image = $("<img>");
-            image.attr("src", data.businesses[i].image_url);
-            image.attr("alt", "Restaurant image");
-            image.css("height", "100%");
-            image.css("min-width", "100%");
-            imageFigure.append(image);
-            cardImage.append(imageFigure);
-            card.append(cardImage);
-
-            // Card content
-            var cardContent = $("<div>").attr("class", "card-content");
-            var content = $("<div>").attr("class", "content");
-            // Restaurant name
-            var name = $("<h2>");
-            name.text(data.businesses[i].name);
-            content.append(name);
-
-            // Row with columns for dollar sign, ratings, review count
-            var restaurantInfo = $("<div>").attr("class", "columns");
-            // Price range for each restaurant
-            var price = $("<p>").attr("class", "column");
-            price.text(data.businesses[i].price);
-            // Ratings for each restaurant
-            var ratings = $("<p>").attr("class", "column");
-            ratings.text(data.businesses[i].rating);
-            // Review count for each restaurant
-            var reviewCnt = $("<p>").attr("class", "column");
-            reviewCnt.text(data.businesses[i].review_count);
-            
-            restaurantInfo.append(price);
-            restaurantInfo.append(ratings);
-            restaurantInfo.append(reviewCnt);
-
-            
-            // Food category type for each restaurant
-            var category = $("<p>");
-            category.text(data.businesses[i].categories[0].title);
-            
-            // Address for each restaurant
-            var address = $("<p>");
-            address.text(data.businesses[i].location.display_address);
-            
-            // Yelp URL for each restaurant
-            var siteLink = $("<a>");
-            siteLink.attr("href", data.businesses[i].url);
-            siteLink.attr("target", "_blank");
-            siteLink.text("Click here to visit the restaurant on Yelp");
-
-            // Keep appending to this
-            content.append(restaurantInfo);
-            content.append(category);
-            content.append(address);
-            content.append(siteLink);
-
-            // Append everything to the card
-            cardContent.append(content);
-            card.append(cardContent);
-            column.append(card);
-
-            // Append card to HTML
+            // Append text to HTML
             $("#card-container").append(column);
+        } else {
+            for (var i = 0; i < 5; i++) {
+                // Get coordinates to populate map
+                // setMarkers(data.businesses[i]);
+        
+                // Create a card container for each restaurant information
+                var column = $("<div>");
+                column.attr("class", "column");
+                var card = $("<div>");
+                card.attr("class", "card");
+        
+                // Restaurant image
+                var cardImage = $("<div>");
+                cardImage.attr("class", "card-image");
+                var imageFigure = $("<figure>");
+                imageFigure.attr("class", "image is-4by3");
+                var image = $("<img>");
+                image.attr("src", data.businesses[i].image_url);
+                image.attr("alt", "Restaurant image");
+                image.css("height", "100%");
+                image.css("min-width", "100%");
+                imageFigure.append(image);
+                cardImage.append(imageFigure);
+                card.append(cardImage);
+        
+                // Card content
+                var cardContent = $("<div>").attr("class", "card-content");
+                var content = $("<div>").attr("class", "content");
+                // Restaurant name
+                var name = $("<h2>");
+                name.text(data.businesses[i].name);
+                content.append(name);
+        
+                // Row with columns for dollar sign, ratings, review count
+                var restaurantInfo = $("<div>").attr("class", "columns");
+                // Price range for each restaurant
+                var price = $("<p>").attr("class", "column");
+                price.text(data.businesses[i].price);
+                // Ratings for each restaurant
+                var ratings = $("<p>").attr("class", "column");
+                ratings.text(data.businesses[i].rating);
+                // Review count for each restaurant
+                var reviewCnt = $("<p>").attr("class", "column");
+                reviewCnt.text(data.businesses[i].review_count);
+                
+                restaurantInfo.append(price);
+                restaurantInfo.append(ratings);
+                restaurantInfo.append(reviewCnt);
+        
+                
+                // Food category type for each restaurant
+                var category = $("<p>");
+                category.text(data.businesses[i].categories[0].title);
+                
+                // Address for each restaurant
+                var address = $("<p>");
+                address.text(data.businesses[i].location.display_address);
+                
+                // Yelp URL for each restaurant
+                var siteLink = $("<a>");
+                siteLink.attr("href", data.businesses[i].url);
+                siteLink.attr("target", "_blank");
+                siteLink.text("Click here to visit the restaurant on Yelp");
+        
+                // Keep appending to this
+                content.append(restaurantInfo);
+                content.append(category);
+                content.append(address);
+                content.append(siteLink);
+        
+                // Append everything to the card
+                cardContent.append(content);
+                card.append(cardContent);
+                column.append(card);
+        
+                // Append card to HTML
+                $("#card-container").append(column);
+            }
         }
     });
-
 }
 
 

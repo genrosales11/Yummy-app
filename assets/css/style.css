@@ -186,3 +186,7 @@ header{
     width: 80px;
   
 }
+
+.footer p:hover {
+    color: rgb(67, 36, 206);
+} 

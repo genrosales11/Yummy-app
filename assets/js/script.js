@@ -157,7 +157,8 @@ function displayCard(business) {
         reviewCnt: business.review_count, 
         category: business.categories[0].title, 
         address: business.location.display_address, 
-        URL: business.url
+        URL: business.url,
+        coordinates: business.coordinates
     }
 }
 
@@ -203,6 +204,7 @@ function getData(userLocation, category, price) {
             $("#card-container").append(column);
         } else {
             var restaurantsInfo = [];
+            var markers = [];
 
             for (var i = 0; i < 5; i++) {
                 // Get coordinates to populate map
@@ -256,14 +258,8 @@ function getLocalStorage() {
 
     // 2. Display restaurants
     results.restaurants.forEach(restaurant => {
-        // imageURL: business.image_url, 
-        // name: business.name, 
-        // price: business.price, 
-        // rating: business.rating, 
-        // reviewCnt: business.review_count, 
-        // category: business.categories[0].title, 
-        // address: business.location.display_address, 
-        // URL: business.url
+        // Populate map with markers
+        setMarkers(restaurant)
 
         // Format so it works with displayCard()
         var res = {

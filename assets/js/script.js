@@ -199,5 +199,4 @@ function getData(userLocation, category, price) {
 // Call Yelp API once the user clicks the "Search" button
 
 
-//localStorage.setItem("cityName", "city")
-searchBtn.addEventListener("click", cityInput)
+

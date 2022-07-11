@@ -147,7 +147,7 @@ img {
 .container{
     display: flex;
     justify-content: center;
-    font-family: 'Titan One';
+    font-family: 'Merriweather', serif;
 }
 
 .choice-section{

@@ -102,8 +102,9 @@ function getData(userLocation, category, price) {
 
         // If no restaurants are returned
         if (data.businesses.length === 0) {
+            $("#card-container").addClass("is-centered");
             var column = $("<div>");
-            column.attr("class", "column");
+            column.attr("class", "column is-half");
             var message = $("<h2>");
             message.text("Oh no! No restaurants are available with your given preferences. Try something else!");
             column.append(message);
@@ -120,7 +121,7 @@ function getData(userLocation, category, price) {
                 column.attr("class", "column");
                 var card = $("<div>");
                 card.attr("class", "card");
-                card.css("height", "600px");
+                card.css("height", "650px");
         
                 // Restaurant image
                 var cardImage = $("<div>");

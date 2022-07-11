@@ -199,3 +199,20 @@ function getData(userLocation, category, price) {
 
 //localStorage.setItem("cityName", "city")
 //searchBtn.addEventListener("click", cityInput)
+
+const inKey = document.getElementById("citySearch");
+
+const inpValue = document.getElementById("chooseCategory");
+
+const localStorage = document.getElementById("localstorage");
+
+btnInsert.onClick = function () {
+
+    const key = inpKey, value;
+
+    const value = inpValue, value;
+
+    console.log(key)
+    console.log(value);
+
+};

@@ -120,6 +120,7 @@ function getData(userLocation, category, price) {
                 column.attr("class", "column");
                 var card = $("<div>");
                 card.attr("class", "card");
+                card.css("height", "600px");
         
                 // Restaurant image
                 var cardImage = $("<div>");

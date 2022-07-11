@@ -146,16 +146,16 @@ function getData(userLocation, category, price) {
                 content.append(name);
         
                 // Row with columns for dollar sign, ratings, review count
-                var restaurantInfo = $("<div>").attr("class", "columns is-mobile");
+                var restaurantInfo = $("<div>").attr("class", "columns is-mobile is-gapless");
                 // Price range for each restaurant
                 var price = $("<p>").attr("class", "column");
                 price.text(data.businesses[i].price);
                 // Ratings for each restaurant
                 var ratings = $("<p>").attr("class", "column");
-                ratings.text(data.businesses[i].rating);
+                ratings.text(data.businesses[i].rating + " / 5");
                 // Review count for each restaurant
                 var reviewCnt = $("<p>").attr("class", "column");
-                reviewCnt.text(data.businesses[i].review_count);
+                reviewCnt.text(data.businesses[i].review_count + " reviews");
                 
                 restaurantInfo.append(price);
                 restaurantInfo.append(ratings);

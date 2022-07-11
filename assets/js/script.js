@@ -274,6 +274,12 @@ function getLocalStorage() {
         }
         displayCard(res);
     })
+
+    // 3. Populate user input with user's previous inputs
+    $("#city-search").val(results.userLocation);
+    $("#choose-category").val(results.category);
+    $(`#${results.price}`).prop("checked", true);
+ 
 }
 
 

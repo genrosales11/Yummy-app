@@ -48,6 +48,8 @@ var pricePoint = document.querySelector('input[name="foobar"]')
 var userLocation;
 // Pointer to food category
 var category;
+// Pointer to price range
+var price;
 
 // Function to grab user input and pass it to the Yelp API
 function cityInput(event) {
@@ -61,7 +63,7 @@ function cityInput(event) {
     userLocation = document.getElementById("city-search").value;
     category = catSearch.value;
 
-    var price = document.getElementsByName('foobar');
+    price = document.getElementsByName('foobar');
 
     for (var i = 0, length = price.length; i < length; i++) {
         if (price[i].checked) {
@@ -146,6 +148,8 @@ function displayCard(business) {
 
     // Append card to HTML
     $("#card-container").append(column);
+
+    return [business.image_url, business.name, business.price, business.rating, business.review_count, business.categories[0].title, business.location.display_address, business.url]
 }
 
 // call yelp api
@@ -189,21 +193,34 @@ function getData(userLocation, category, price) {
             // Append text to HTML
             $("#card-container").append(column);
         } else {
+            var restaurantsInfo = [];
+
             for (var i = 0; i < 5; i++) {
                 // Get coordinates to populate map
                 setMarkers(data.businesses[i]);
 
                 // Display restaurant card
-                displayCard(data.businesses[i]);                
+                restaurantsInfo.push(displayCard(data.businesses[i]));
             }
+            console.log(restaurantsInfo);
+            // Save restaurant info to local storage
+            setLocalStorage(userLocation, category, price, restaurantsInfo);
         }
     });
 }
 
 
 // ------------------------------------- LOCAL STORAGE -------------------------------------
-function setLocalStorage() {
+// Save to local storage user input and its results
+function setLocalStorage(userLocation, category, price, resArray) {
+    var search = {
+        userLocation: userLocation,
+        category: category,
+        price: price,
+        restaurants: resArray
+    }
 
+    localStorage.setItem(userLocation, JSON.stringify(search));
 }
 
 function getLocalStorage() {

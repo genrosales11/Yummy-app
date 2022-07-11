@@ -222,6 +222,7 @@ function getData(userLocation, category, price) {
 }
 
 
+
 // ------------------------------------- LOCAL STORAGE -------------------------------------
 // Save to local storage user input and its results
 function setLocalStorage(userLocation, category, price, resArray, dataCenter) {
@@ -236,26 +237,27 @@ function setLocalStorage(userLocation, category, price, resArray, dataCenter) {
     localStorage.setItem(userLocation, JSON.stringify(search));
 }
 
-// Button to display user's last search
+ //Button to display user's last search
 var prevSearchBtn = $("#prev-search-btn");
 prevSearchBtn.click(getLocalStorage);
 
-//------ adding chroma JS---------//
+//--------------- adding chroma JS------------//
 const changer = document.querySelector("div.color-changer input")
 const bodyTag = document.querySelector("body")
 
-
+// create event listener
 changer.addEventListener("input", function () {
     bodyTag.style.backgroundColor = changer.value
-
+// add chroma
     const color = chroma(changer.value)
-
+// add chroma variable
     if (color.luminance() < 0.2) {
         bodyTag.classList.add("dark")
     } else {
         bodyTag.classList.remove("dark")
     }
 })
+
 
 
 // Get user's last search to populate page
@@ -304,4 +306,3 @@ function getLocalStorage() {
 
 // Call Yelp API once the user clicks the "Search" button
 searchBtn.addEventListener("click", cityInput);
-

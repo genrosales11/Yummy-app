@@ -170,6 +170,10 @@ header{
     background-color: #FEF1E9
 }
 
+header.light{
+    color: black;
+}
+
 .logo{
     padding-top: 20px;
     padding-left: 40px;
@@ -188,9 +192,12 @@ header{
   
 }
 
-.footer p:hover {
-    color: rgb(67, 36, 206);
-} 
+
+
+p {
+    color: black;
+}
+
   /* adding chroma js color btn */
 
   body {
@@ -211,6 +218,10 @@ div.color-changer {
     padding:8px 16px 8px 16px;
     border-radius: 50px;
 
+}
+
+body.dark div.color-changer {
+    border: 2px solid white;
 }
 
 div.color-changer input {

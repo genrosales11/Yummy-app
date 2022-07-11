@@ -202,7 +202,7 @@ function getData(userLocation, category, price) {
 const changer = document.querySelector("div.color-changer input")
 const bodyTag = document.querySelector("body")
 
-<<<<<<< HEAD
+
 changer.addEventListener("input", function () {
     bodyTag.style.backgroundColor = changer.value
 
@@ -214,6 +214,4 @@ changer.addEventListener("input", function () {
         bodyTag.classList.remove("dark")
     }
 })
-=======
 
->>>>>>> aacf2ccbb65d0b9c59a7cc6056c7d0516582529f

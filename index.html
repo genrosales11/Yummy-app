@@ -7,9 +7,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
     <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&family=Rubik+Moonrocks&display=swap');
-    </style>
+        @import url('https://fonts.googleapis.com/css2?family=Titan+One&display=swap');
+        </style>
     <title>Yummy App</title>
 </head>
 
@@ -22,13 +24,15 @@
     </header>
 
     <!-- Main section for the content -->
+  
     <main>
-        <div class="container">
+        <div class="container is-vcentered">
+           
             <div class="choice-section">
                 <!-- Introduction to the web app -->
                 <div class="into-section">
-                    <h1 class="is-size-1">Welcome to <i>yummy</i></h1>
-                    <h2 class="is-size-4">Here are the rules:</h2>
+                    <h1 class="is-size-3-mobile is-size-1-desktop is-size-6-tablet">welcome to <i>yummy</i></h1>
+                    <h2 class="is-size-3-mobile is-size-1-desktop">here are the rules:</h2>
                     <br>
                     <ul>
                         <li>Type the city or zip code you want to search restaurants for</li>
@@ -43,12 +47,12 @@
                 <section id="user-input-section">
                     <!-- Input for the city/zipcode -->
                     <div id="city-or-zipcode">
-                        <input class="input" type="text" placeholder="City or Zip code" id="city-search">
+                        <input class="input is-size-3-mobile" type="text" placeholder="city or zipcode" id="city-search">
                     </div>
                     <br>
 
                     <!-- Dropdown for the food category -->
-                    <div class="select is-rounded" id="dropdown-section">
+                    <div class="select is-rounded is-variable is-2-mobile is-0-tablet is-3-desktop is-8-widescreen is-1-fullhd" id="dropdown-section">
                         <select id="choose-category">
                             <option value=" ">Select a food type</option>
                             <option value="Mexican">Mexican</option>
@@ -64,7 +68,7 @@
 
                     <!-- Radio buttons to select price point ($, $$, $$$) -->
                     <div id="price-point">
-                        <div class="control" id="prices">
+                        <div class="control is-size-3-mobile" id="prices">
                             <label class="radio" >
                                 <input type="radio" value="1" name="foobar">
                                 $
@@ -87,7 +91,7 @@
 
                     <!-- Search button -->
                     <div id="btn">
-                        <button class="button is-info " id="search-btn">Search</button>
+                        <button class="button is-info is-size-3-mobile " id="search-btn"> search </button>
                     </div>
 
                 </section>
@@ -110,7 +114,7 @@
     <footer class="footer">
         <div class="content has-text-centered">
             <p>
-                <strong>Yummy App<img class="logo" src="./assets/images/yummy.png" alt="web logo"></strong> by Laura Sierra, Marry
+                <strong>Yummy App<img class="logo px-2" src="./assets/images/yummy.png" alt="web logo" ></strong> by Laura Sierra, Marry
                 Dillon and Genesis Rosales
             </p>
         </div>

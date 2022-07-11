@@ -192,5 +192,10 @@ function getData(userLocation, category, price) {
     });
 }
 
+
+
 // Call Yelp API once the user clicks the "Search" button
-searchBtn.addEventListener("click", cityInput)
+
+
+//localStorage.setItem("cityName", "city")
+//searchBtn.addEventListener("click", cityInput)

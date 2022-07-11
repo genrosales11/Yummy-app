@@ -102,8 +102,9 @@ function getData(userLocation, category, price) {
 
         // If no restaurants are returned
         if (data.businesses.length === 0) {
+            $("#card-container").addClass("is-centered");
             var column = $("<div>");
-            column.attr("class", "column");
+            column.attr("class", "column is-half");
             var message = $("<h2>");
             message.text("Oh no! No restaurants are available with your given preferences. Try something else!");
             column.append(message);
@@ -120,6 +121,7 @@ function getData(userLocation, category, price) {
                 column.attr("class", "column");
                 var card = $("<div>");
                 card.attr("class", "card");
+                // card.css("height", "650px");
         
                 // Restaurant image
                 var cardImage = $("<div>");
@@ -144,16 +146,16 @@ function getData(userLocation, category, price) {
                 content.append(name);
         
                 // Row with columns for dollar sign, ratings, review count
-                var restaurantInfo = $("<div>").attr("class", "columns");
+                var restaurantInfo = $("<div>").attr("class", "columns is-mobile is-gapless");
                 // Price range for each restaurant
                 var price = $("<p>").attr("class", "column");
                 price.text(data.businesses[i].price);
                 // Ratings for each restaurant
                 var ratings = $("<p>").attr("class", "column");
-                ratings.text(data.businesses[i].rating);
+                ratings.text(data.businesses[i].rating + " / 5");
                 // Review count for each restaurant
                 var reviewCnt = $("<p>").attr("class", "column");
-                reviewCnt.text(data.businesses[i].review_count);
+                reviewCnt.text(data.businesses[i].review_count + " revs");
                 
                 restaurantInfo.append(price);
                 restaurantInfo.append(ratings);
@@ -198,4 +200,4 @@ function getData(userLocation, category, price) {
 
 
 //localStorage.setItem("cityName", "city")
-//searchBtn.addEventListener("click", cityInput)
+searchBtn.addEventListener("click", cityInput)

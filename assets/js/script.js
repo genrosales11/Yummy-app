@@ -222,6 +222,7 @@ function getData(userLocation, category, price) {
 }
 
 
+
 // ------------------------------------- LOCAL STORAGE -------------------------------------
 // Save to local storage user input and its results
 function setLocalStorage(userLocation, category, price, resArray, dataCenter) {
@@ -236,20 +237,20 @@ function setLocalStorage(userLocation, category, price, resArray, dataCenter) {
     localStorage.setItem(userLocation, JSON.stringify(search));
 }
 
-// Button to display user's last search
+ //Button to display user's last search
 var prevSearchBtn = $("#prev-search-btn");
 prevSearchBtn.click(getLocalStorage);
 
-//------ adding chroma JS---------//
+//--------------- adding chroma JS------------//
 const changer = document.querySelector("div.color-changer input")
 const bodyTag = document.querySelector("body")
 
-
+// create event listener
 changer.addEventListener("input", function () {
     bodyTag.style.backgroundColor = changer.value
-
+// add chroma
     const color = chroma(changer.value)
-
+// add chroma variable
     if (color.luminance() < 0.2) {
         bodyTag.classList.add("dark")
     } else {
@@ -257,3 +258,51 @@ changer.addEventListener("input", function () {
     }
 })
 
+
+
+// Get user's last search to populate page
+function getLocalStorage() {
+    // Get the key on local storage
+    var key = localStorage.key(0);
+    // Retrieve values
+    var results = JSON.parse(localStorage.getItem(key));
+    console.log(results);
+
+    // Populate page with retrieved data
+    // 1. Populate map
+    initMap();
+    var center = { lat: results.dataCenter.latitude, lng: results.dataCenter.longitude };
+    map.setCenter(center);
+    $("#map").css("height", "300px");
+    $("#map").css("width", "100%");
+
+    // 2. Display restaurants
+    results.restaurants.forEach(restaurant => {
+        // Populate map with markers
+        setMarkers(restaurant)
+
+        // Format so it works with displayCard()
+        var res = {
+            image_url: restaurant.imageURL,
+            name: restaurant.name,
+            price: restaurant.price,
+            rating: restaurant.rating,
+            review_count: restaurant.reviewCnt,
+            categories: [{ title: restaurant.category }],
+            location: { display_address: restaurant.address },
+            url: restaurant.URL
+        }
+        displayCard(res);
+    })
+
+    // 3. Populate user input with user's previous inputs
+    $("#city-search").val(results.userLocation);
+    $("#choose-category").val(results.category);
+    $(`#${results.price}`).prop("checked", true);
+ 
+}
+
+
+
+// Call Yelp API once the user clicks the "Search" button
+searchBtn.addEventListener("click", cityInput);

@@ -198,6 +198,18 @@ function getData(userLocation, category, price) {
 
 // Call Yelp API once the user clicks the "Search" button
 
+//------ adding chroma JS---------//
+const changer = document.querySelector("div.color-changer input")
+const bodyTag = document.querySelector("body")
 
-//localStorage.setItem("cityName", "city")
-searchBtn.addEventListener("click", cityInput)
+changer.addEventListener("input", function () {
+    bodyTag.style.backgroundColor = changer.value
+
+    const color = chroma(changer.value)
+
+    if (color.luminance() < 0.2) {
+        bodyTag.classList.add("dark")
+    } else {
+        bodyTag.classList.remove("dark")
+    }
+})

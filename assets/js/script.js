@@ -241,6 +241,7 @@ function setLocalStorage(userLocation, category, price, resArray, dataCenter) {
 var prevSearchBtn = $("#prev-search-btn");
 prevSearchBtn.click(getLocalStorage);
 
+
 //--------------- adding chroma JS------------//
 const changer = document.querySelector("div.color-changer input")
 const bodyTag = document.querySelector("body")

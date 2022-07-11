@@ -255,29 +255,29 @@ function getLocalStorage() {
     $("#map").css("width", "100%");
 
     // 2. Display restaurants
-    // results.restaurants.forEach(restaurant => {
-    //     // imageURL: business.image_url, 
-    //     // name: business.name, 
-    //     // price: business.price, 
-    //     // rating: business.rating, 
-    //     // reviewCnt: business.review_count, 
-    //     // category: business.categories[0].title, 
-    //     // address: business.location.display_address, 
-    //     // URL: business.url
+    results.restaurants.forEach(restaurant => {
+        // imageURL: business.image_url, 
+        // name: business.name, 
+        // price: business.price, 
+        // rating: business.rating, 
+        // reviewCnt: business.review_count, 
+        // category: business.categories[0].title, 
+        // address: business.location.display_address, 
+        // URL: business.url
 
-    //     // Format so it works with displayCard()
-    //     var res = {
-    //         image_url: restaurant.imageURL,
-    //         name: restaurant.name,
-    //         price: restaurant.price,
-    //         rating: restaurant.rating,
-    //         review_count: restaurant.reviewCnt,
-    //         categories: [{ title: restaurant.category }],
-    //         location: { display_address: restaurant.address },
-    //         url: restaurant.URL
-    //     }
-    //     displayCard(res);
-    // })
+        // Format so it works with displayCard()
+        var res = {
+            image_url: restaurant.imageURL,
+            name: restaurant.name,
+            price: restaurant.price,
+            rating: restaurant.rating,
+            review_count: restaurant.reviewCnt,
+            categories: [{ title: restaurant.category }],
+            location: { display_address: restaurant.address },
+            url: restaurant.URL
+        }
+        displayCard(res);
+    })
 }
 
 

@@ -144,6 +144,7 @@ img {
     color: blanchedalmond;
 } */
 
+
 .container{
     display: flex;
     justify-content: center;
@@ -190,3 +191,13 @@ header{
 .footer p:hover {
     color: rgb(67, 36, 206);
 } 
+  
+div.color-changer {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    border: 2px solid black;
+    padding:8px 16px 8px 16px;
+    border-radius: 50px;
+
+}

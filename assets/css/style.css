@@ -144,10 +144,11 @@ img {
     color: blanchedalmond;
 } */
 
+
 .container{
     display: flex;
     justify-content: center;
-    font-family: 'Merriweather', serif;
+    
 }
 
 .choice-section{
@@ -190,3 +191,34 @@ header{
 .footer p:hover {
     color: rgb(67, 36, 206);
 } 
+  /* adding chroma js color btn */
+
+  body {
+      background-color: white;
+      color: black;
+      font-family: 'Merriweather', serif;
+  }
+
+  body.dark {
+      color: white;
+  }
+
+div.color-changer {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    border: 2px solid black;
+    padding:8px 16px 8px 16px;
+    border-radius: 50px;
+
+}
+
+div.color-changer input {
+    position:absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+}
+

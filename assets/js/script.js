@@ -121,7 +121,7 @@ function getData(userLocation, category, price) {
                 column.attr("class", "column");
                 var card = $("<div>");
                 card.attr("class", "card");
-                card.css("height", "650px");
+                // card.css("height", "650px");
         
                 // Restaurant image
                 var cardImage = $("<div>");
@@ -146,7 +146,7 @@ function getData(userLocation, category, price) {
                 content.append(name);
         
                 // Row with columns for dollar sign, ratings, review count
-                var restaurantInfo = $("<div>").attr("class", "columns");
+                var restaurantInfo = $("<div>").attr("class", "columns is-mobile");
                 // Price range for each restaurant
                 var price = $("<p>").attr("class", "column");
                 price.text(data.businesses[i].price);
@@ -200,4 +200,4 @@ function getData(userLocation, category, price) {
 
 
 //localStorage.setItem("cityName", "city")
-//searchBtn.addEventListener("click", cityInput)
+searchBtn.addEventListener("click", cityInput)

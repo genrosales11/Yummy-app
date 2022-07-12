@@ -204,7 +204,6 @@ function getData(userLocation, category, price) {
             $("#card-container").append(column);
         } else {
             var restaurantsInfo = [];
-            var markers = [];
 
             for (var i = 0; i < 5; i++) {
                 // Get coordinates to populate map
@@ -293,7 +292,7 @@ function getLocalStorage() {
             location: { display_address: restaurant.address },
             url: restaurant.URL
         }
-        displayCard(res);``
+        displayCard(res);
     })
 
     // 3. Populate user input with user's previous inputs

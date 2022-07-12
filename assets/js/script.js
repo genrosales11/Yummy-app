@@ -241,6 +241,7 @@ function setLocalStorage(userLocation, category, price, resArray, dataCenter) {
 var prevSearchBtn = $("#prev-search-btn");
 prevSearchBtn.click(getLocalStorage);
 
+
 //--------------- adding chroma JS------------//
 const changer = document.querySelector("div.color-changer input")
 const bodyTag = document.querySelector("body")
@@ -292,7 +293,7 @@ function getLocalStorage() {
             location: { display_address: restaurant.address },
             url: restaurant.URL
         }
-        displayCard(res);
+        displayCard(res);``
     })
 
     // 3. Populate user input with user's previous inputs

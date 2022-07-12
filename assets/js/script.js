@@ -243,8 +243,8 @@ prevSearchBtn.click(getLocalStorage);
 
 
 //--------------- adding chroma JS------------//
-const changer = document.querySelector("div.color-changer input")
-const bodyTag = document.querySelector("body")
+var changer = document.querySelector("div.color-changer input")
+var bodyTag = document.querySelector("body")
 
 // create event listener
 changer.addEventListener("input", function () {

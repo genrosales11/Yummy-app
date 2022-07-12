@@ -293,7 +293,7 @@ function getLocalStorage() {
             location: { display_address: restaurant.address },
             url: restaurant.URL
         }
-        displayCard(res);
+        displayCard(res);``
     })
 
     // 3. Populate user input with user's previous inputs

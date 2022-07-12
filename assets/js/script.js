@@ -204,7 +204,6 @@ function getData(userLocation, category, price) {
             $("#card-container").append(column);
         } else {
             var restaurantsInfo = [];
-            var markers = [];
 
             for (var i = 0; i < 5; i++) {
                 // Get coordinates to populate map
@@ -243,8 +242,8 @@ prevSearchBtn.click(getLocalStorage);
 
 
 //--------------- adding chroma JS------------//
-const changer = document.querySelector("div.color-changer input")
-const bodyTag = document.querySelector("body")
+var changer = document.querySelector("div.color-changer input")
+var bodyTag = document.querySelector("body")
 
 // create event listener
 changer.addEventListener("input", function () {
@@ -293,7 +292,7 @@ function getLocalStorage() {
             location: { display_address: restaurant.address },
             url: restaurant.URL
         }
-        displayCard(res);``
+        displayCard(res);
     })
 
     // 3. Populate user input with user's previous inputs

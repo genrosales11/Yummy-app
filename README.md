@@ -13,7 +13,8 @@ The restaurant information is provided by the Yelp API which includes restaurant
 
 ### Technologies Used
 
-The Yummy App was build using:
+The Yummy App was built using the following technologies:
+
 * HTML
 * CSS
 * Javascript

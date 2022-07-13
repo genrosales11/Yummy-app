@@ -144,10 +144,11 @@ img {
     color: blanchedalmond;
 } */
 
+
 .container{
     display: flex;
     justify-content: center;
-    font-family: Arial, Helvetica, sans-serif;
+    
 }
 
 .choice-section{
@@ -169,6 +170,10 @@ header{
     background-color: #FEF1E9
 }
 
+header.light{
+    color: black;
+}
+
 .logo{
     padding-top: 20px;
     padding-left: 40px;
@@ -181,3 +186,51 @@ header{
 .logo{
     width: 230px;
 }
+
+.footer img {
+    width: 80px;
+  
+}
+
+
+
+p {
+    color: black;
+}
+
+  /* adding chroma js color btn */
+
+  body {
+    background-color: white;
+    color: black;
+    font-family: 'Merriweather', serif;
+}
+
+body.dark {
+    color: white;
+}
+
+body.dark header {
+    color: white;
+}
+
+div.color-changer {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  border: 2px solid black;
+  padding:8px 16px 8px 16px;
+  border-radius: 50px;
+
+}
+
+div.color-changer input {
+  position:absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+}
+
+

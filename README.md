@@ -67,6 +67,8 @@ The Yummy App utilizes Bulma which is a free CSS framework. We used their code f
 
 ### Learning Objectives
 
+Our objective was to learn how to build a functional web application calling multiple api's that was responsive to user input. We also wanted to learn how to use an alternative framework to Bootstrap.
+
 
 ## Authors
 

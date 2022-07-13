@@ -183,7 +183,7 @@ function getData(userLocation, category, price) {
             // location: userLocation
         }
     }).then(function (data) {
-        console.log(data)
+        // console.log(data)
 
         // Grab the center coordinates of the results to set it as the map's center
         var center = { lat: data.region.center.latitude, lng: data.region.center.longitude };
@@ -214,7 +214,7 @@ function getData(userLocation, category, price) {
                 // Display restaurant card
                 restaurantsInfo.push(displayCard(data.businesses[i]));
             }
-            console.log(restaurantsInfo);
+            // console.log(restaurantsInfo);
             // Save restaurant info to local storage (only most recent)
             localStorage.clear();
             setLocalStorage(userLocation, category, price, restaurantsInfo, data.region.center);
@@ -268,7 +268,7 @@ function getLocalStorage() {
     var key = localStorage.key(0);
     // Retrieve values
     var results = JSON.parse(localStorage.getItem(key));
-    console.log(results);
+    // console.log(results);
 
     // Populate page with retrieved data
     // 1. Populate map

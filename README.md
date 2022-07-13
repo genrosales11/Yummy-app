@@ -9,6 +9,8 @@ Once a user inputs their specified categories, they are also able to see a map w
 
 The restaurant information is provided by the Yelp API which includes restaurant name, address, link to Yelp page, price, number of reviews, and rating out of five. 
 
+(add gif here)
+
 ### Technologies Used
 
 The Yummy App was build using:
@@ -22,6 +24,17 @@ The Yummy App was build using:
 * Chroma.js
 
 ### User Stories
+
+We came up with three user stories to help guide the direction of our application. Those three included:
+
+* As a stay-at-home parent, I want to easily find restaurants near me, so I can spend more time focusing on my family instead of cooking.
+
+* As someone who has a budget, I want to search for budget friendly restaurants so that I can eat delicious food and stay within my budget.
+
+* As someone who is not sure what to eat, I want to see a drop down menu of different food options so i can see different food categories.
+
+(add gif here)
+
 
 ### API Functionality 
 

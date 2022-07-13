@@ -2,7 +2,7 @@
 var map;
 
 // Function that displays markers on the map for each restaurant
-function setMarkers(restaurant) {        
+function setMarkers(restaurant) {
     var marker = new google.maps.Marker({
         position: new google.maps.LatLng(restaurant.coordinates.latitude, restaurant.coordinates.longitude),
         title: restaurant.name
@@ -115,20 +115,21 @@ function displayCard(business) {
     // Review count for each restaurant
     var reviewCnt = $("<p>").attr("class", "column");
     reviewCnt.text(business.review_count + " revs");
-    
+
+    // appednd to cards
     restaurantInfo.append(price);
     restaurantInfo.append(ratings);
     restaurantInfo.append(reviewCnt);
 
-    
+
     // Food category type for each restaurant
     var category = $("<p>");
     category.text(business.categories[0].title);
-    
+
     // Address for each restaurant
     var address = $("<p>");
     address.text(business.location.display_address);
-    
+
     // Yelp URL for each restaurant
     var siteLink = $("<a>");
     siteLink.attr("href", business.url);
@@ -150,13 +151,13 @@ function displayCard(business) {
     $("#card-container").append(column);
 
     return {
-        imageURL: business.image_url, 
-        name: business.name, 
-        price: business.price, 
-        rating: business.rating, 
-        reviewCnt: business.review_count, 
-        category: business.categories[0].title, 
-        address: business.location.display_address, 
+        imageURL: business.image_url,
+        name: business.name,
+        price: business.price,
+        rating: business.rating,
+        reviewCnt: business.review_count,
+        category: business.categories[0].title,
+        address: business.location.display_address,
         URL: business.url,
         coordinates: business.coordinates
     }
@@ -164,6 +165,7 @@ function displayCard(business) {
 
 // call yelp api
 function getData(userLocation, category, price) {
+    // bypass yelps cors restriction by appending first url
     let queryURL = `https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?location=${userLocation}&term=${category}&price=${price}`;
     const apiKey = 'S9-0qQhgv6fiYrqXXE9X-TIZd1aepWF1BA6eT6_wQnQXtp8R1SVNuaXBGaZO15-IizPiprlRb6IT7v_gz_Dfl7yzGpZD_sCSnedvAD89GvwKGf85mwqLPWc5JGjIYnYx'
 
@@ -181,7 +183,7 @@ function getData(userLocation, category, price) {
             // location: userLocation
         }
     }).then(function (data) {
-        console.log(data)
+        // console.log(data)
 
         // Grab the center coordinates of the results to set it as the map's center
         var center = { lat: data.region.center.latitude, lng: data.region.center.longitude };
@@ -212,7 +214,7 @@ function getData(userLocation, category, price) {
                 // Display restaurant card
                 restaurantsInfo.push(displayCard(data.businesses[i]));
             }
-            console.log(restaurantsInfo);
+            // console.log(restaurantsInfo);
             // Save restaurant info to local storage (only most recent)
             localStorage.clear();
             setLocalStorage(userLocation, category, price, restaurantsInfo, data.region.center);
@@ -236,7 +238,7 @@ function setLocalStorage(userLocation, category, price, resArray, dataCenter) {
     localStorage.setItem(userLocation, JSON.stringify(search));
 }
 
- //Button to display user's last search
+//Button to display user's last search
 var prevSearchBtn = $("#prev-search-btn");
 prevSearchBtn.click(getLocalStorage);
 
@@ -248,9 +250,9 @@ var bodyTag = document.querySelector("body")
 // create event listener
 changer.addEventListener("input", function () {
     bodyTag.style.backgroundColor = changer.value
-// add chroma
+    // add chroma
     const color = chroma(changer.value)
-// add chroma variable
+    // add chroma variable
     if (color.luminance() < 0.2) {
         bodyTag.classList.add("dark")
     } else {
@@ -266,7 +268,7 @@ function getLocalStorage() {
     var key = localStorage.key(0);
     // Retrieve values
     var results = JSON.parse(localStorage.getItem(key));
-    console.log(results);
+    // console.log(results);
 
     // Populate page with retrieved data
     // 1. Populate map
@@ -299,7 +301,7 @@ function getLocalStorage() {
     $("#city-search").val(results.userLocation);
     $("#choose-category").val(results.category);
     $(`#${results.price}`).prop("checked", true);
- 
+
 }
 
 

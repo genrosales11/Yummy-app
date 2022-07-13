@@ -5,13 +5,14 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- css framework -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Merriweather:ital@1&display=swap');
-        </style>
+    </style>
     <title>Yummy App</title>
 </head>
 
@@ -24,10 +25,10 @@
     </header>
 
     <!-- Main section for the content -->
-  
+
     <main>
         <div class="container is-vcentered">
-           
+
             <div class="choice-section">
                 <!-- Introduction to the web app -->
                 <div class="into-section">
@@ -47,20 +48,23 @@
                 <section id="user-input-section">
                     <!-- Input for the city/zipcode -->
                     <div id="city-or-zipcode">
-                        <input class="input is-size-8-mobile is-size-4-desktop is-size-4-tablet" type="text" placeholder="City or Zipcode" id="city-search">
+                        <input class="input is-size-8-mobile is-size-4-desktop is-size-4-tablet" type="text"
+                            placeholder="City or Zipcode" id="city-search">
                     </div>
-                    
+
                     <br>
 
                     <!-- Dropdown for the food category -->
-                    <div class="select is-rounded is-variable is-2-mobile is-0-tablet is-3-desktop is-8-widescreen is-1-fullhd" id="dropdown-section">
+                    <div class="select is-rounded is-variable is-2-mobile is-0-tablet is-3-desktop is-8-widescreen is-1-fullhd"
+                        id="dropdown-section">
                         <select id="choose-category">
-                            <option value=" ">Select a food type</option>
-                            <option value="Mexican">Mexican</option>
-                            <option value="Italian">Italian</option>
-                            <option value="Peruvian">Peruvian</option>
-                            <option value="American">American</option>
-                            <option value="Japanese">Japanese</option>
+                            <!-- empty string for no category option -->
+                            <option value=" ">no category</option>
+                            <option value="Mexican">mexican</option>
+                            <option value="Italian">italian</option>
+                            <option value="Peruvian">peruvian</option>
+                            <option value="American">american</option>
+                            <option value="Japanese">japanese</option>
                         </select>
                     </div>
                     <br>
@@ -69,35 +73,39 @@
 
                     <!-- Radio buttons to select price point ($, $$, $$$) -->
                     <div id="price-point">
-                        <div class="control is-size-5-mobile is-size-4-desktop is-size-4-tablet" id="prices">
-                            <label class="radio" >
-                                <input type="radio" value="1" id="1" name="foobar">
-                                $
-                            </label>
-                            <label class="radio">
-                                <input type="radio" value="2" id="2" name="foobar">
-                                $$
-                            </label>
-                            <label class="radio">
-                                <input type="radio" value="3" id="3" name="foobar">
-                                $$$
-                            </label>
-                            <label class="radio">
-                                <input type="radio" value="4" id="4" name="foobar">
-                                $$$$
-                            </label>
+                        <!-- adding value of 1 2 3 or 4 to connect to Yelp API -->
+                        <div class="control" id="prices">
+                            <div class="control is-size-5-mobile is-size-4-desktop is-size-4-tablet" id="prices">
+                                <label class="radio">
+                                    <input type="radio" value="1" id="1" name="foobar">
+                                    $
+                                </label>
+                                <label class="radio">
+                                    <input type="radio" value="2" id="2" name="foobar">
+                                    $$
+                                </label>
+                                <label class="radio">
+                                    <input type="radio" value="3" id="3" name="foobar">
+                                    $$$
+                                </label>
+                                <label class="radio">
+                                    <input type="radio" value="4" id="4" name="foobar">
+                                    $$$$
+                                </label>
+                            </div>
                         </div>
-                    </div>
-                    <br>
+                        <br>
 
-                    <!-- Search button -->
-                    <div id="btn">
-                        <button class="button is-info is-size-5-mobile is-size-4-desktop is-size-4-tablet" id="search-btn">Search</button>
-                    </div>
-                    <!-- Previous serach button -->
-                    <div id="btn">
-                        <button class="button mt-3 is-light is-size-5-mobile is-size-4-desktop is-size-4-tablet" id="prev-search-btn">Previous Search</button>
-                     </div>
+                        <!-- Search button -->
+                        <div id="btn">
+                            <button class="button is-info is-size-5-mobile is-size-4-desktop is-size-4-tablet"
+                                id="search-btn">Search</button>
+                        </div>
+                        <!-- Previous serach button -->
+                        <div id="btn">
+                            <button class="button mt-3 is-light is-size-5-mobile is-size-4-desktop is-size-4-tablet"
+                                id="prev-search-btn">Previous Search</button>
+                        </div>
 
                 </section>
             </div>
@@ -109,8 +117,11 @@
         <section id="map">
         </section>
 
-        <!-- Section to display search results -->
-        <section class="display-results columns m-2 is-desktop is-vcentered" id="card-container">
+        <!-- Section to display search result cards with bulma styling -->
+        <section
+            class="display-results columns is-variable is-2-mobile is-0-tablet is-3-desktop is-8-widescreen is-1-fullhd"
+            id="card-container">
+
         </section>
 
     </main>
@@ -124,12 +135,13 @@
     <footer class="footer">
         <div class="content has-text-centered">
             <p>
-                <strong>Yummy App<img class="logo px-2" src="./assets/images/yummy.png" alt="web logo" ></strong> by Laura Sierra, Mary
+                <strong>Yummy App<img class="logo px-2" src="./assets/images/yummy.png" alt="web logo"></strong> by
+                Laura Sierra, Mary
                 Dillon and Genesis Rosales
             </p>
         </div>
     </footer>
-   
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/chroma-js/2.4.2/chroma.min.js"></script>
@@ -138,14 +150,14 @@
 
 
     <script async
-      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCeIsv0Z_3H9SN3mUf4sTSbnhIao536hrk&callback=initMap">
-    </script>
-    <script src="./assets/js/script.js"></script> 
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCeIsv0Z_3H9SN3mUf4sTSbnhIao536hrk&callback=initMap">
+        </script>
+    <script src="./assets/js/script.js"></script>
 
- 
 
-    
-    
+
+
+
 </body>
 
 </html>

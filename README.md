@@ -38,11 +38,27 @@ We came up with three user stories to help guide the direction of our applicatio
 
 ### API Functionality 
 
+Our user stories influenced our API functionality and user inputs that connect to the outputed values from our API's. 
+
+The text form allows the user to input their location or zipcode that is nearest to them. They can then choose from a list of categories that they are craving, and choose the pricing amount on how much they would like to spend. 
+
+#### Yelp API
+
+(add code snipet)
+
+#### Google API
+
+(add code sniped)
+
 ### CSS Framework
+
 
 ### Learning Objectives
 
+
 ## Authors
+
+The Yummy App was created by Laura Sierra, Genesis Rosales, and Mary Dillon.
 
 ## License
 

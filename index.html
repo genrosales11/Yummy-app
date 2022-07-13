@@ -50,6 +50,7 @@
                     <!-- Dropdown for the food category -->
                     <div class="select is-rounded" id="dropdown-section">
                         <select id="choose-category">
+                            <!-- empty string for no category option -->
                             <option value=" ">no category</option>
                             <option value="Mexican">mexican</option>
                             <option value="Italian">italian</option>
@@ -64,6 +65,7 @@
 
                     <!-- Radio buttons to select price point ($, $$, $$$) -->
                     <div id="price-point">
+                        <!-- adding value of 1 2 3 or 4 to connect to Yelp API -->
                         <div class="control" id="prices">
                             <label class="radio" >
                                 <input type="radio" value="1" name="foobar">
@@ -101,7 +103,7 @@
             map goes here
         </section>
 
-        <!-- Section to display search results -->
+        <!-- Section to display search result cards with bulma styling -->
         <section class="display-results columns is-variable is-2-mobile is-0-tablet is-3-desktop is-8-widescreen is-1-fullhd" id="card-container">
         </section>
 

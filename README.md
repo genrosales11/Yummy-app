@@ -44,13 +44,25 @@ The text form allows the user to input their location or zipcode that is nearest
 
 #### Yelp API
 
+When a user inputs their desired location, price, and meal category, a set of five cards are generated that match that criteria. They are then able to choose which restaurant to go to with the information displayed. They can use the provided address and also go to the linked Yelp page to read reviews and see the menu.
+
 (add code snipet)
+
+(add gif of card population)
 
 #### Google API
 
+When a user inputs their desired location, price, and meal category, the google map with populated with five locations on the map. They can click on the pin and see exactly where the five returned restaurants are in direct relation to their current location.
+
 (add code sniped)
 
+(add gif of map populating)
+
 ### CSS Framework
+
+The Yummy App utilizes Bulma which is a free CSS framework. We used their code for the dropdowns, checkboxes, forms, card styles, columns, and responsive design of our site.
+
+(gif of website being resized)
 
 
 ### Learning Objectives
@@ -59,6 +71,8 @@ The text form allows the user to input their location or zipcode that is nearest
 ## Authors
 
 The Yummy App was created by Laura Sierra, Genesis Rosales, and Mary Dillon.
+
+(link to github pages)
 
 ## License
 

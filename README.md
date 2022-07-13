@@ -1,4 +1,40 @@
+
+
 # Yummy App
+![Alt Text](/assets/images/imgofApp.gif)
+
+## Task
+
+-Your project should fulfill the following requirements:
+
+-Must use a CSS framework other than Bootstrap
+
+-Must be Deployed (GitHub Pages)
+
+-Must be interactive (i.e: accept and respond to user input)
+
+-Must have User Input Validation
+
+-Must use at least two server-side APIs
+
+-Must have some sort of repeating element (table, columns, etc)
+
+-Does not use alerts, confirms, or prompts (use modals).
+
+-Must utilize at least one new library or technology that we haven’t discussed
+
+-Must meet good quality coding standards (indentation, scoping, naming)
+
+-Use client-side storage to store persistent data.
+
+-Be responsive.
+
+-Have a clean repository that meets quality coding standards (file structure, naming conventions, follows best practices for class/id naming conventions, indentation, quality comments, etc.).
+
+-Must utilize Git Branching / Merging. Git Branches based on Feature Built / GitHub Project Card, minimum of 30 meaningful commits per contributor.
+
+-Have a quality README (with unique name, description, technologies used, screenshot, and link to deployed application).
+
 
 ## Description
 
@@ -9,7 +45,11 @@ Once a user inputs their specified categories, they are also able to see a map w
 
 The restaurant information is provided by the Yelp API which includes restaurant name, address, link to Yelp page, price, number of reviews, and rating out of five. 
 
-(add gif here)
+
+## installation
+
+* Runs in the browser
+* Git clone - git@github.com:genrosales11/Yummy-app.git
 
 ### Technologies Used
 
@@ -23,6 +63,7 @@ The Yummy App was built using the following technologies:
 * Google Maps API
 * Yelp API
 * Chroma.js
+
 
 ### User Stories
 
@@ -60,10 +101,13 @@ When a user inputs their desired location, price, and meal category, the google 
 (add gif of map populating)
 
 ### CSS Framework
+ 
+ * The application has responsive layout that adapts to different screens
+ * Easy to navigate for all users
+ * Bulma for Site Features: Dropdown, search form, checkboxes, results card styling & search button 
 
-The Yummy App utilizes Bulma which is a free CSS framework. We used their code for the dropdowns, checkboxes, forms, card styles, columns, and responsive design of our site.
 
-(gif of website being resized)
+![Alt Text](/assets/images/imgCSS.gif)
 
 
 ### Learning Objectives

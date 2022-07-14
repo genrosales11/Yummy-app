@@ -1,7 +1,7 @@
 
 
 # Yummy App
-![Yummy App](/assets/images/imgofApp.gif)
+
 
 ## Task
 
@@ -107,7 +107,7 @@ When a user inputs their desired location, price, and meal category, the google 
  * Bulma for Site Features: Dropdown, search form, checkboxes, results card styling & search button 
 
 
-![responsiveness](/assets/images/imgCSS.gif)
+![responsiveness](./assets/images/imgCSS.gif)
 
 ### New Library ChromaJS
  -Chroma.js is a small-ish zero-dependency JavaScript library (13.5kB) for all kinds of color conversions and color scale
@@ -116,7 +116,7 @@ When a user inputs their desired location, price, and meal category, the google 
 * analyze and manipulate colors
 * convert colors into wide range of formats
 
-![new library](/assets/images/chromajs.gif)
+![new library](./assets/images/chromajs%20.gif)
 
 
 

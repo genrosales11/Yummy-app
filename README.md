@@ -54,17 +54,109 @@ The text form allows the user to input their location or zipcode that is nearest
 
 When a user inputs their desired location, price, and meal category, a set of five cards are generated that match that criteria. They are then able to choose which restaurant to go to with the information displayed. They can use the provided address and also go to the linked Yelp page to read reviews and see the menu.
 
-![alt text](assets/images/yelp_api_code.png)
+```javascript
+// call yelp api
+function getData(userLocation, category, price) {
+    // bypass yelps cors restriction by appending first url
+    let queryURL = `https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?location=${userLocation}&term=${category}&price=${price}`;
+    const apiKey = 'S9-0qQhgv6fiYrqXXE9X-TIZd1aepWF1BA6eT6_wQnQXtp8R1SVNuaXBGaZO15-IizPiprlRb6IT7v_gz_Dfl7yzGpZD_sCSnedvAD89GvwKGf85mwqLPWc5JGjIYnYx'
 
-(add gif of card population)
+    $.ajax({
+        url: queryURL,
+        method: "GET",
+        headers: {
+            "accept": "application/json",
+            "x-requested-with": "xmlhttprequest",
+            "Access-Control-Allow-Origin": "*",
+            "Authorization": `Bearer ${apiKey}`
+        },
+        data: {
+            // term: category,
+            // location: userLocation
+        }
+    }).then(function (data) {
+        // console.log(data)
+
+        // Grab the center coordinates of the results to set it as the map's center
+        var center = { lat: data.region.center.latitude, lng: data.region.center.longitude };
+        // Set center of map based on the data's center
+        map.setCenter(center);
+        // Display map
+        $("#map").css("height", "300px");
+        $("#map").css("width", "100%");
+
+        // If no restaurants are returned
+        if (data.businesses.length === 0) {
+            $("#card-container").addClass("is-centered");
+            var column = $("<div>");
+            column.attr("class", "column is-half");
+            var message = $("<h2>");
+            message.text("Oh no! No restaurants are available with your given preferences. Try something else!");
+            column.append(message);
+
+            // Append text to HTML
+            $("#card-container").append(column);
+        } else {
+            var restaurantsInfo = [];
+
+            for (var i = 0; i < 5; i++) {
+                // Get coordinates to populate map
+                setMarkers(data.businesses[i]);
+
+                // Display restaurant card
+                restaurantsInfo.push(displayCard(data.businesses[i]));
+            }
+            // console.log(restaurantsInfo);
+            // Save restaurant info to local storage (only most recent)
+            localStorage.clear();
+            setLocalStorage(userLocation, category, price, restaurantsInfo, data.region.center);
+        }
+    });
+}
+```
 
 #### Google API
 
 When a user inputs their desired location, price, and meal category, the google map with populated with five locations on the map. They can click on the pin and see exactly where the five returned restaurants are in direct relation to their current location.
 
-![alt text](assets/images/google_api_code.png)
+```javascript
+var map;
 
-(add gif of map populating)
+// Function that displays markers on the map for each restaurant
+function setMarkers(restaurant) {
+    var marker = new google.maps.Marker({
+        position: new google.maps.LatLng(restaurant.coordinates.latitude, restaurant.coordinates.longitude),
+        title: restaurant.name
+    })
+
+    // To add marker to the map
+    marker.setMap(map);
+
+    // Add an info window for each marker
+    var infoWindow = new google.maps.InfoWindow({
+        content: restaurant.name
+    })
+
+    // Clicking at the marker displays the marker's associated restaurant name
+    marker.addListener("click", () => {
+        infoWindow.open({
+            anchor: marker,
+            map,
+            shouldFocus: false
+        })
+    })
+}
+
+// Google Maps API function to display map
+function initMap() {
+    map = new google.maps.Map(document.getElementById("map"), {
+        // Dummy data to populate map's center to remove error
+        center: { lat: 37.0902, lng: -95.7129 },
+        zoom: 10
+    })
+}
+window.initMap = initMap;
+```
 
 ### CSS Framework
  

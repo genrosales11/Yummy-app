@@ -1,8 +1,7 @@
-
-
 # Yummy App
 
 ## Description
+![Demo of the app](./assets/images/Yummy%20App%20runthrough.gif)
 
 The Yummy App was created to make finding restaurants in your city or zip code simple, easy, and quick to use. It provides reliable information about restaurants based on location from user-generated inputs. 
  
@@ -45,12 +44,9 @@ We came up with three user stories to help guide the direction of our applicatio
 
 * As someone who is not sure what to eat, I want to see a drop down menu of different food options so i can see different food categories.
 
-(add gif here)
-
-
 ### API Functionality 
 
-Our user stories influenced our API functionality and user inputs that connect to the outputed values from our API's. 
+Our user stories influenced our API functionality and user inputs that connect to the output values from our APIs. 
 
 The text form allows the user to input their location or zipcode that is nearest to them. They can then choose from a list of categories that they are craving, and choose the pricing amount on how much they would like to spend. 
 

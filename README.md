@@ -1,7 +1,7 @@
 
 
 # Yummy App
-![Yummy App](/assets/images/imgofApp.gif)
+
 
 ## Task
 

@@ -165,18 +165,16 @@ window.initMap = initMap;
  * Bulma for Site Features: Dropdown, search form, checkboxes, results card styling & search button 
 
 
-![responsiveness](./assets/images/imgCSS.gif)
+![GIF of responsiveness](./assets/images/imgCSS.gif)
 
 ### New Library ChromaJS
- -Chroma.js is a small-ish zero-dependency JavaScript library (13.5kB) for all kinds of color conversions and color scale
- * Here are a couple of things chroma.js can do for you:
+Chroma.js is a small-ish zero-dependency JavaScript library (13.5kB) for all kinds of color conversions and color scale
+* Here are a couple of things chroma.js can do for you:
 * read colors from a wide range of formats
 * analyze and manipulate colors
 * convert colors into wide range of formats
 
-![new library](./assets/images/chromajs%20.gif)
-
-
+![Chroma library](./assets/images/chromajs%20.gif)
 
 ### Learning Objectives
 
@@ -195,8 +193,6 @@ The Yummy App was created by
 Laura Sierra: https://github.com/laurasierra17
 Genesis Rosales: https://github.com/genrosales11
 Mary Dillon: https://github.com/mardill
-
-(link to github pages)
 
 ## License
 

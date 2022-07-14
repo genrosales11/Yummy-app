@@ -2,40 +2,6 @@
 
 # Yummy App
 
-
-## Task
-
--Your project should fulfill the following requirements:
-
--Must use a CSS framework other than Bootstrap
-
--Must be Deployed (GitHub Pages)
-
--Must be interactive (i.e: accept and respond to user input)
-
--Must have User Input Validation
-
--Must use at least two server-side APIs
-
--Must have some sort of repeating element (table, columns, etc)
-
--Does not use alerts, confirms, or prompts (use modals).
-
--Must utilize at least one new library or technology that we haven’t discussed
-
--Must meet good quality coding standards (indentation, scoping, naming)
-
--Use client-side storage to store persistent data.
-
--Be responsive.
-
--Have a clean repository that meets quality coding standards (file structure, naming conventions, follows best practices for class/id naming conventions, indentation, quality comments, etc.).
-
--Must utilize Git Branching / Merging. Git Branches based on Feature Built / GitHub Project Card, minimum of 30 meaningful commits per contributor.
-
--Have a quality README (with unique name, description, technologies used, screenshot, and link to deployed application).
-
-
 ## Description
 
 The Yummy App was created to make finding restaurants in your city or zip code simple, easy, and quick to use. It provides reliable information about restaurants based on location from user-generated inputs. 
@@ -44,6 +10,10 @@ It’s ideal for users looking for quick recommendations of where to eat dependi
 Once a user inputs their specified categories, they are also able to see a map with pins of restaurants in the area the user selects.
 
 The restaurant information is provided by the Yelp API which includes restaurant name, address, link to Yelp page, price, number of reviews, and rating out of five. 
+
+Website link: https://genrosales11.github.io/Yummy-app/
+
+* Please go to https://cors-anywhere.herokuapp.com to request temporary access to the Yelp API. Application will not work until activated. 
 
 
 ## installation
@@ -88,7 +58,7 @@ The text form allows the user to input their location or zipcode that is nearest
 
 When a user inputs their desired location, price, and meal category, a set of five cards are generated that match that criteria. They are then able to choose which restaurant to go to with the information displayed. They can use the provided address and also go to the linked Yelp page to read reviews and see the menu.
 
-(add code snipet)
+![alt text](assets/images/yelp_api_code.png)
 
 (add gif of card population)
 
@@ -96,7 +66,7 @@ When a user inputs their desired location, price, and meal category, a set of fi
 
 When a user inputs their desired location, price, and meal category, the google map with populated with five locations on the map. They can click on the pin and see exactly where the five returned restaurants are in direct relation to their current location.
 
-(add code sniped)
+![alt text](assets/images/google_api_code.png)
 
 (add gif of map populating)
 
@@ -133,7 +103,10 @@ Our objective was to learn how to build a functional web application calling mul
 
 ## Authors
 
-The Yummy App was created by Laura Sierra, Genesis Rosales, and Mary Dillon.
+The Yummy App was created by 
+Laura Sierra: https://github.com/laurasierra17
+Genesis Rosales: https://github.com/genrosales11
+Mary Dillon: https://github.com/mardill
 
 (link to github pages)
 

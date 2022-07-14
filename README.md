@@ -182,17 +182,21 @@ Our objective was to learn how to build a functional web application calling mul
 
 ### Future Development
 
--Show multiple previous searches using Local Storage
--Have a randomizer button
--Multiple category selector from the dropdown to show more results
+- Show multiple previous searches using Local Storage
+
+- Have a randomizer button
+
+- Multiple category selector from the dropdown to show more results
 
 
 ## Authors
 
 The Yummy App was created by 
-Laura Sierra: https://github.com/laurasierra17
-Genesis Rosales: https://github.com/genrosales11
-Mary Dillon: https://github.com/mardill
+*Laura Sierra: https://github.com/laurasierra17
+
+*Genesis Rosales: https://github.com/genrosales11
+
+*Mary Dillon: https://github.com/mardill
 
 ## License
 

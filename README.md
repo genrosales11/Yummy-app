@@ -1,7 +1,7 @@
 
 
 # Yummy App
-![Alt Text](/assets/images/imgofApp.gif)
+![Yummy App](/assets/images/imgofApp.gif)
 
 ## Task
 
@@ -107,12 +107,28 @@ When a user inputs their desired location, price, and meal category, the google 
  * Bulma for Site Features: Dropdown, search form, checkboxes, results card styling & search button 
 
 
-![Alt Text](/assets/images/imgCSS.gif)
+![responsiveness](/assets/images/imgCSS.gif)
+
+### New Library ChromaJS
+ -Chroma.js is a small-ish zero-dependency JavaScript library (13.5kB) for all kinds of color conversions and color scale
+ * Here are a couple of things chroma.js can do for you:
+* read colors from a wide range of formats
+* analyze and manipulate colors
+* convert colors into wide range of formats
+
+![new library](/assets/images/chromajs.gif)
+
 
 
 ### Learning Objectives
 
 Our objective was to learn how to build a functional web application calling multiple api's that was responsive to user input. We also wanted to learn how to use an alternative framework to Bootstrap.
+
+### Future Development
+
+-Show multiple previous searches using Local Storage
+-Have a randomizer button
+-Multiple category selector from the dropdown to show more results
 
 
 ## Authors
